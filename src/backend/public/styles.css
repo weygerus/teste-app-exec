@@ -1,0 +1,84 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    border-radius: 6px;
+}
+
+.button-primary {
+    background: linear-gradient(45deg, #4cd7d7, #d08bf9);
+}
+
+.button-secondary {
+    background: linear-gradient(45deg, #b9a3f1, #e75cbf);
+    margin-top: 15px;
+    height: 45px;
+    font-size: 1.2rem;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+.custom_login_form_input {
+    margin-top: 8px;
+    height: 45px;
+}
+
+.custom_login_form_label {
+    font-weight: bold;
+}
+
+.custom_login_form_title {
+    padding-bottom: 25px;
+}
+
+.custom_user_popup_link_container {
+    gap: 20px;
+}
+
+.logout {
+    margin-top: 20px;
+}

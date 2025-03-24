@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Sessões</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+
+    <style>
+        body {
+
+            font-family: 'Inter', sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+
+    <style>
+        /* Estilos gerais para o card */
+        .card {
+            width: 30%;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            justify-self: flex-end;
+        }
+
+        /* Estilo para o card de sucesso */
+        .sucessCardStyle {
+            background-color: #28a745;
+            /* Cor verde */
+            color: white;
+            border-left: 5px solid #218838;
+            /* Bordo verde escuro para chamar a atenção */
+        }
+
+        .sucessCardStyle:hover {
+            background-color: #218838;
+            /* Tom de verde mais escuro ao passar o mouse */
+        }
+
+        .sucessCardStyle:before {
+            content: "\f00c";
+            /* Ícone de sucesso (check) */
+            font-family: "Font Awesome 5 Free";
+            /* Font Awesome */
+            font-weight: 900;
+            /* Define o ícone como negrito */
+            margin-right: 10px;
+            color: white;
+            /* Garante que o ícone será branco */
+        }
+
+        /* Estilo para o card de erro */
+        .errorCardStyle {
+            background-color: #dc3545;
+            /* Cor vermelha */
+            color: white;
+            border-left: 5px solid #c82333;
+            /* Bordo vermelho escuro */
+        }
+
+        .errorCardStyle:hover {
+            background-color: #c82333;
+            /* Tom de vermelho mais escuro ao passar o mouse */
+        }
+
+        .errorCardStyle:before {
+            content: "\f00d";
+            /* Ícone de erro (X) */
+            font-family: "Font Awesome 5 Free";
+            /* Font Awesome */
+            font-weight: 900;
+            /* Define o ícone como negrito */
+            margin-right: 10px;
+            color: white;
+            /* Cor do ícone */
+        }
+
+        /* Estilo para o texto do card */
+        .card p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+
+<style>
+    .session-card {
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 0px;
+        width: 100%;
+        height: 45px;
+
+        padding: 5px 10px;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .session-card span {
+
+        color: #191919;
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    .reload_icon {
+
+        width: 30px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .reload_icon:hover {
+
+        margin-top: -3px;
+    }
+
+    .remove_icon {
+
+        width: 30px;
+    }
+
+    .tabs_container {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .active_sessions_tab {
+
+        width: 48%;
+        height: 45px;
+
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(45deg, #b9a3f1, #e75cbf);
+        border-radius: 0px;
+
+        color: #fff;
+        font-weight: 500;
+        font-size: 1em;
+
+        transition: 0.1s ease-in-out;
+    }
+
+    .active_sessions_tab:hover {
+
+        margin-top: -2px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-add {
+
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .remove_button,
+    .edit_button {
+
+        margin-top: 0px !important;
+        transition: 0.1s ease-in;
+    }
+
+    .remove_button:hover,
+    .edit_button:hover {
+
+        margin-top: -4px !important;
+    }
+</style>
+
+<style>
+    .button_secondary {
+
+        width: 40%;
+        height: 45px;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(45deg, #b9a3f1, #e75cbf);
+        border-radius: 0px;
+
+        color: #fff;
+        font-weight: 500;
+        font-size: 1em;
+
+        transition: 0.1s ease-in-out;
+    }
+
+    .button_cancelar {
+
+        height: 45px;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0px;
+
+        color: #fff;
+        font-weight: 500;
+        font-size: 1em;
+
+        transition: 0.1s ease-in-out;
+    }
+
+    .button_secondary:hover,
+    .button_cancelar:hover {
+
+        margin-bottom: 4px;
+    }
+
+    /* Estilos gerais para o card */
+    .card {
+        width: 80%;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+
+        position: absolute;
+        bottom: 10px;
+
+        justify-self: flex-end;
+        display: flex;
+    }
+
+    /* Estilo para o card de sucesso */
+    .sucessCardStyle {
+        background-color: #28a745;
+        /* Cor verde */
+        color: white;
+        border-left: 5px solid #218838;
+        /* Bordo verde escuro para chamar a atenção */
+    }
+
+    .sucessCardStyle:hover {
+        background-color: #218838;
+        /* Tom de verde mais escuro ao passar o mouse */
+    }
+
+    .sucessCardStyle:before {
+        content: "\f00c";
+        /* Ícone de sucesso (check) */
+        font-family: "Font Awesome 5 Free";
+        /* Font Awesome */
+        font-weight: 900;
+        /* Define o ícone como negrito */
+        margin-right: 10px;
+        color: white;
+        /* Garante que o ícone será branco */
+    }
+
+    /* Estilo para o card de erro */
+    .errorCardStyle {
+        background-color: #dc3545;
+        /* Cor vermelha */
+        color: white;
+        border-left: 5px solid #c82333;
+        /* Bordo vermelho escuro */
+    }
+
+    .errorCardStyle:hover {
+        background-color: #c82333;
+        /* Tom de vermelho mais escuro ao passar o mouse */
+    }
+
+    .errorCardStyle:before {
+        content: "\f00d";
+        /* Ícone de erro (X) */
+        font-family: "Font Awesome 5 Free";
+        /* Font Awesome */
+        font-weight: 900;
+        /* Define o ícone como negrito */
+        margin-right: 10px;
+        color: white;
+        /* Cor do ícone */
+    }
+
+    /* Estilo para o texto do card */
+    .card p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .closeCardButtonStyle {
+
+        font-weight: 800;
+        font-size: 14px;
+
+        color: #000;
+        cursor: pointer;
+        margin-top: 15px;
+
+        transition: 0.1s ease;
+    }
+
+    .closeCardButtonStyle:hover {
+
+        margin-top: 13px;
+    }
+
+    .nullErrorsCard {
+
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .deleteAccountConfirmCard {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .btns_confirmdeleteAccount_container {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .LoadingCard {
+
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .deleteAccountConfirmBtn,
+    .deleteAccountCancelButton {
+
+        width: 45%;
+        height: 40px;
+        color: #fff;
+
+        margin-top: 20px;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(45deg, #b9a3f1, #e75cbf);
+        transition: 0.1s ease-in;
+    }
+
+    .deleteAccountConfirmBtn:hover,
+    .deleteAccountCancelButton:hover {
+
+        margin-bottom: 4px;
+    }
+
+    .deleteAccountCancelButton {
+
+        background: gray;
+    }
+</style>
+
+
+
+<style>
+    .custom-loading-icon {
+
+        position: absolute;
+        top: 50%;
+        left: 60%;
+    }
+</style>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-6 max-w-2xl bg-white shadow-md rounded-lg">
+
+        <!-- Abas -->
+        <div class="tabs_container flex space-x-2 mb-4">
+            <button class="active_sessions_tab tab-button active" data-tab="active-sessions"
+                onclick="openTab('active-sessions')">Sessões
+                Ativas</button>
+            <button class="active_sessions_tab tab-button" data-tab="error-sessions"
+                onclick="openTab('error-sessions')">Erros</button>
+        </div>
+
+        <!-- Conteúdo das abas -->
+        <div id="active-sessions" class="tab-content active">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class=" text-lg font-semibold">Sessões Ativas</h2>
+
+                <div class="btns_container">
+                    <button onclick="loadSessions()">
+                        <i class="reload_icon fa-solid fa-rotate-right"></i>
+                    </button>
+                    <button class="reload-button button-add" id="button-add-account">+</button>
+                </div>
+
+            </div>
+            <div id="active-list" class="session-list space-y-3">
+                <!-- Cards de sessões ativas serão carregados aqui -->
+            </div>
+        </div>
+
+        <div id="error-sessions" class="tab-content hidden">
+            <div class="flex justify-between items-center mb-3">
+                <h2 class="text-lg font-semibold">Sessões com Erro</h2>
+
+                <div class="btns_container">
+                    <button onclick="loadSessions()">
+                        <i class="reload_icon fa-solid fa-rotate-right"></i>
+                    </button>
+                    <button class="reload-button button-add" id="button-add-account">+</button>
+                </div>
+            </div>
+            <div id="error-list" class="session-list space-y-3">
+                <!-- Cards de sessões com erro serão carregados aqui -->
+            </div>
+        </div>
+
+    </div>
+
+    <div id="registerPopup"
+        class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-6 shadow-lg w-96 relative">
+            <h2 class="text-xl font-semibold mb-4">Adicionar Novo Instagram</h2>
+            <form id="registerForm" style=" margin-top: 35px;">
+                <div class="mb-4">
+                    <label for="instaUsernameInput" class="custom-upload-list-title block text-sm text-gray-700">Nome de
+                        usuário ou Email:</label>
+                    <input type="text" id="instaUsernameInput" name="username"
+                        class="mt-1 block px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="instaPasswordInput"
+                        class="custom-upload-list-title block text-sm text-gray-700">Senha:</label>
+                    <input type="password" id="instaPasswordInput" name="password"
+                        class="mt-1 block px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="confirmInstaPasswordInput"
+                        class="custom-upload-list-title block text-sm text-gray-700">Confirme sua
+                        senha:</label>
+                    <input type="password" id="confirmInstaPasswordInput" name="confirmPassword"
+                        class="mt-1 block px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
+                        required>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button id="registerPopupSubmmitButton" class="button_secondary">
+                        Registrar
+                    </button>
+                    <button type="button" id="registerPopupCancelButton"
+                        class="button_cancelar px-4 bg-gray-300 text-gray-700 hover:bg-gray-400 hover-settings-btn focus:outline-none">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="createActionContainer" id="createCardContainer"></div>
+
+
+    <div id="initServiceCard"
+        class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+
+        <div class="nullErrorsCard bg-white p-6 shadow-lg text-center w-auto relative">
+
+            <h2>Iniciar Serviço</h2>
+            <button id="initServiceCardButton" class="button_secondary">
+                Iniciar
+            </button>
+        </div>
+    </div>
+
+    <div id="deleteLoadingCard"
+        class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+
+        <div class="nullErrorsCard bg-white p-6 shadow-lg text-center w-auto relative">
+
+            <h2>Deletando a conta</h2>
+            <div class="custom_loading_spinner animate-spin rounded-full h-8 w-8 border-t-2 border-pink-500"></div>
+        </div>
+    </div>
+
+    <div id="addAccountLoadingCard"
+        class=" fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="LoadingCard bg-white p-6 shadow-lg text-center w-auto relative">
+
+            <h2>Adicionando a conta</h2>
+            <div class="custom_loading_spinner animate-spin rounded-full h-8 w-8 border-t-2 border-pink-500"></div>
+        </div>
+    </div>
+
+    <script src="../mainScreen.js"></script>
+</body>
+
+</html>

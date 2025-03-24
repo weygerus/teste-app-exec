@@ -1,0 +1,38 @@
+2025-03-23T01:10:58: PM2 log: ===============================================================================
+2025-03-23T01:10:58: PM2 log: --- New PM2 Daemon started ----------------------------------------------------
+2025-03-23T01:10:58: PM2 log: Time                 : Sun Mar 23 2025 01:10:58 GMT-0300 (Horário Padrão de Brasília)
+2025-03-23T01:10:58: PM2 log: PM2 version          : 5.4.3
+2025-03-23T01:10:58: PM2 log: Node.js version      : 20.11.0
+2025-03-23T01:10:58: PM2 log: Current arch         : x64
+2025-03-23T01:10:58: PM2 log: PM2 home             : y
+2025-03-23T01:10:58: PM2 log: PM2 PID file         : C:\dev\teste-app-exec\src\backend\y\pm2.pid
+2025-03-23T01:10:58: PM2 log: RPC socket file      : \\.\pipe\rpc.sock
+2025-03-23T01:10:58: PM2 log: BUS socket file      : \\.\pipe\pub.sock
+2025-03-23T01:10:58: PM2 log: Application log path : C:\dev\teste-app-exec\src\backend\y\logs
+2025-03-23T01:10:58: PM2 log: Worker Interval      : 30000
+2025-03-23T01:10:58: PM2 log: Process dump file    : C:\dev\teste-app-exec\src\backend\y\dump.pm2
+2025-03-23T01:10:58: PM2 log: Concurrent actions   : 2
+2025-03-23T01:10:58: PM2 log: SIGTERM timeout      : 1600
+2025-03-23T01:10:58: PM2 log: ===============================================================================
+2025-03-23T01:12:34: PM2 log: App [local-exec-api:0] starting in -fork mode-
+2025-03-23T01:12:34: PM2 log: App [local-exec-api:0] online
+2025-03-23T01:14:38: PM2 log: Stopping app:local-exec-api id:0
+2025-03-23T01:14:38: PM2 log: App [local-exec-api:0] exited with code [1] via signal [SIGINT]
+2025-03-23T01:14:38: PM2 log: pid=9912 msg=process killed
+2025-03-23T03:37:45: PM2 log: App [server:0] starting in -fork mode-
+2025-03-23T03:37:45: PM2 log: App [server:0] online
+2025-03-23T03:42:32: PM2 log: Stopping app:server id:0
+2025-03-23T03:42:32: PM2 log: App [server:0] exited with code [1] via signal [SIGINT]
+2025-03-23T03:42:32: PM2 log: pid=25124 msg=process killed
+2025-03-23T04:03:03: PM2 log: App [server:0] starting in -fork mode-
+2025-03-23T04:03:03: PM2 log: App [server:0] online
+2025-03-23T04:03:08: PM2 log: Stopping app:server id:0
+2025-03-23T04:03:08: PM2 log: App [server:0] exited with code [1] via signal [SIGINT]
+2025-03-23T04:03:08: PM2 log: pid=14920 msg=process killed
+2025-03-23T20:19:00: PM2 log: App [gerenc-insta-local-API:0] starting in -fork mode-
+2025-03-23T20:19:00: PM2 log: App [gerenc-insta-local-API:0] online
+2025-03-23T21:30:26: PM2 log: Stopping app:gerenc-insta-local-API id:0
+2025-03-23T21:30:27: PM2 log: App [gerenc-insta-local-API:0] exited with code [1] via signal [SIGINT]
+2025-03-23T21:30:27: PM2 log: pid=11780 msg=process killed
+2025-03-23T21:32:34: PM2 log: App [gerenc-insta-local-API:0] starting in -fork mode-
+2025-03-23T21:32:34: PM2 log: App [gerenc-insta-local-API:0] online

@@ -1,0 +1,5 @@
+MULTERMIDIA
+Servidor rodando na porta 7700
+Conectado ao MongoDB!
+ngrok túnel aberto em: https://cbf5-2804-90-6400-81f4-ede9-dc15-7430-3e3d.ngrok-free.app
+Resposta do servidor localhost 5500: { message: 'Conexão da API local salva com sucesso!' }

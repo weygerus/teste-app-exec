@@ -1,0 +1,48 @@
+.tab-button {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background: #e2e8f0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-button.active {
+    background: linear-gradient(45deg, #4cd7d7, #d08bf9);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.reload-button {
+    background: linear-gradient(45deg, #b9a3f1, #e75cbf);
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reload-button:hover {
+    opacity: 0.85;
+}
+
+.session-card {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

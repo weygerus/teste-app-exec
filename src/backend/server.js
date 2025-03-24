@@ -1,0 +1,94 @@
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose')
+
+
+const axios = require('axios');
+const {  getuserId } = require('./controllers/authController');
+
+const app = express();
+const PORT = 6890;
+
+require('dotenv').config();
+
+mongoose.connect
+("mongodb+srv://gabrileao38:Gaga2001Gaga@cluster0.d0dpg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  
+  console.log('Conectado ao MongoDB!')   
+})
+.catch((err) => {
+  
+  console.log("Erro de conexão com o banco de dados: " + err)
+})
+
+app.use(express.json());
+app.use(cors());
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+
+
+process.on("SIGINT", async () => {
+  await handleDisconnect();
+  process.exit(0);
+});
+
+process.on("SIGTERM", async () => {
+  await handleDisconnect();
+  process.exit(0);
+});
+
+
+
+async function handleDisconnect() {
+  try {
+
+    const userId = await getuserId();
+
+    const response = await axios.post(`https://gerenc-insta.onrender.com/api/connection/deleteConnectionUrl/${userId}`, {
+      mensagem: "Servidor desconectado",
+    });
+
+    console.log("Desconectado e notificado.");
+  } 
+  catch (error) {
+
+    console.error("Erro ao processar desconexão:", error);
+  }
+}
+
+const instaAuthRoutes = require('./routes/instaAuthRoutes');
+app.use('/api/instaAuth', instaAuthRoutes);
+
+const authRoutes = require('./routes/authRoutes');
+app.use('/api/auth', authRoutes);
+
+const actionRoutes = require('./routes/actionRoutes');
+app.use('/api/action', actionRoutes);
+
+
+
+app.get('/', async (req, res) => {
+
+  console.log("OK")
+  return res.status(200).json({
+
+    message: "OK"
+  })
+});
+
+
+
+
+app.listen(PORT, () => {
+
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
