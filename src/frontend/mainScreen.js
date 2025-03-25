@@ -175,7 +175,7 @@ async function loadSessions() {
     errorList.innerHTML = "";
 
     try {
-        const response = await fetch(`https://gerenc-insta.onrender.com/api/instaAuth/loadInstaSessions/${userId}`, {
+        const response = await fetch(`http://localhost:3000/api/instaAuth/loadInstaSessions/${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

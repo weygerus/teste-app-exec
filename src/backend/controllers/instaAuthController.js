@@ -242,3 +242,4 @@ exports.deleteAccount = async (req, res) => {
     res.status(500).json({ message: 'Erro ao deletar conta do Instagram:', error: error });
   }
 };
+

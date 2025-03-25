@@ -1,58 +1,89 @@
-(node:11780) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:13756) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:11780) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:13756) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:10580) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10580) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:24988) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24988) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
 Erro ao tentar logar com a conta companystreet58: GET /api/v1/accounts/current_user/?edit=true - 400 Bad Request; challenge_required
-Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
-    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
+Erro ao se conectar com o servidor localhost 5500: AxiosError: Request failed with status code 404
+    at settle (C:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:2031:12)
+    at Unzip.handleStreamEnd (C:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:3148:11)
+    at Unzip.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:4258:41)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
-    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
-    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
-  response: <ref *1> IncomingMessage {
-    _events: {
-      close: undefined,
-      error: [Function],
-      data: undefined,
-      end: [Function: responseOnEnd],
-      readable: [Function (anonymous)],
-      aborted: [Array]
+    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:56:24) {
+  code: 'ERR_BAD_REQUEST',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
     },
-    _readableState: ReadableState {
-      highWaterMark: 16384,
-      buffer: [],
-      bufferIndex: 0,
-      length: 0,
-      pipes: [],
-      awaitDrainWriters: null,
-      [Symbol(kState)]: 9996156
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.8.3',
+      'Content-Length': '121',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
     },
+    method: 'post',
+    url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+    data: '{"connectionUrl":"https://838b-2804-90-6400-81f4-ede9-dc15-7430-3e3d.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+    allowAbsoluteUrls: true
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
     _maxListeners: undefined,
-    socket: null,
-    httpVersionMajor: 1,
-    httpVersionMinor: 1,
-    httpVersion: '1.1',
-    complete: true,
-    rawHeaders: [
-      'Content-Type',
-      'application/json',
-      'Date',
-      'Mon, 24 Mar 2025 00:23:17 GMT',
-      'Content-Length',
-      '365'
-    ],
-    rawTrailers: [],
-    joinDuplicateHeaders: undefined,
-    aborted: false,
-    upgrade: false,
-    url: 'http://127.0.0.1:4040/api/tunnels',
-    method: null,
-    statusCode: 502,
-    statusMessage: 'Bad Gateway',
-    client: Socket {
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: '121',
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: Socket {
       connecting: false,
       _hadError: false,
       _parent: null,
-      _host: null,
+      _host: 'localhost',
       _closeAfterHandlingError: false,
       _events: [Object],
       _readableState: [ReadableState],
@@ -68,7 +99,7 @@ Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
       timeout: 5000,
       parser: null,
       _httpMessage: null,
-      _peername: [Object],
+      autoSelectFamilyAttemptedAddresses: [Array],
       [Symbol(async_id_symbol)]: -1,
       [Symbol(kHandle)]: [TCP],
       [Symbol(lastWriteQueueSize)]: 0,
@@ -76,15 +107,15 @@ Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
         _idleTimeout: 5000,
         _idlePrev: [TimersList],
         _idleNext: [Timeout],
-        _idleStart: 3857044,
+        _idleStart: 50858510,
         _onTimeout: [Function: bound ],
         _timerArgs: undefined,
         _repeat: null,
         _destroyed: false,
         [Symbol(refed)]: false,
         [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 19308,
-        [Symbol(triggerId)]: 19306
+        [Symbol(asyncId)]: 53782,
+        [Symbol(triggerId)]: 53780
       },
       [Symbol(kBuffer)]: null,
       [Symbol(kBufferCb)]: null,
@@ -97,11 +128,155 @@ Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
       [Symbol(kBytesRead)]: 0,
       [Symbol(kBytesWritten)]: 0
     },
-    _consuming: true,
-    _dumped: false,
-    req: ClientRequest {
+    _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.8.3\r\n' +
+      'Content-Length: 121\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: localhost:3000\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
       _events: [Object: null prototype],
-      _eventsCount: 9,
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 2,
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/api/connection/sendConnectionUrl',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 404,
+      statusMessage: 'Not Found',
+      client: [Socket],
+      _consuming: true,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 20,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'localhost',
+    protocol: 'http:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 121,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 404,
+    statusText: 'Not Found',
+    headers: Object [AxiosHeaders] {
+      'cache-control': 'no-store, must-revalidate',
+      'x-powered-by': 'Next.js',
+      etag: '"25wjdcfv3j10h"',
+      'content-type': 'text/html; charset=utf-8',
+      vary: 'Accept-Encoding',
+      date: 'Mon, 24 Mar 2025 22:04:42 GMT',
+      connection: 'keep-alive',
+      'keep-alive': 'timeout=5',
+      'transfer-encoding': 'chunked'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      method: 'post',
+      url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      data: '{"connectionUrl":"https://838b-2804-90-6400-81f4-ede9-dc15-7430-3e3d.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+      allowAbsoluteUrls: true
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
       _maxListeners: undefined,
       outputData: [],
       outputSize: 0,
@@ -118,20 +293,20 @@ Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
       _removedContLen: false,
       _removedTE: false,
       strictContentLength: false,
-      _contentLength: '74',
+      _contentLength: '121',
       _hasBody: true,
       _trailer: '',
       finished: true,
       _headerSent: true,
       _closed: true,
       socket: [Socket],
-      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
-        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
-        'content-type: application/json\r\n' +
-        'accept: application/json\r\n' +
-        'content-length: 74\r\n' +
-        'accept-encoding: gzip, deflate, br\r\n' +
-        'Host: 127.0.0.1:4040\r\n' +
+      _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: axios/1.8.3\r\n' +
+        'Content-Length: 121\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: localhost:3000\r\n' +
         'Connection: keep-alive\r\n' +
         '\r\n',
       _keepAliveTimeout: 0,
@@ -142,19 +317,18 @@ Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
       maxHeaderSize: undefined,
       insecureHTTPParser: undefined,
       joinDuplicateHeaders: undefined,
-      path: '/api/tunnels',
+      path: '/api/connection/sendConnectionUrl',
       _ended: true,
-      res: [Circular *1],
+      res: [IncomingMessage],
       aborted: false,
       timeoutCb: null,
       upgradeOrConnect: false,
       parser: null,
       maxHeadersCount: null,
       reusedSocket: false,
-      host: '127.0.0.1',
+      host: 'localhost',
       protocol: 'http:',
-      timings: [Object],
-      emit: [Function (anonymous)],
+      _redirectable: [Writable],
       [Symbol(shapeMode)]: false,
       [Symbol(kCapture)]: false,
       [Symbol(kBytesWritten)]: 0,
@@ -164,1332 +338,2419 @@ Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
       [Symbol(errored)]: null,
       [Symbol(kHighWaterMark)]: 16384,
       [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null,
-      [Symbol(reentry)]: true
+      [Symbol(kUniqueHeaders)]: null
     },
-    _eventsCount: 4,
-    timings: {
-      start: 1742775797750,
-      socket: 1742775797751,
-      lookup: 1742775797752,
-      connect: 1742775797752,
-      secureConnect: undefined,
-      upload: 1742775797752,
-      response: 1742775797805,
-      end: 1742775797805,
-      error: undefined,
-      abort: undefined,
-      phases: [Object]
-    },
-    emit: [Function (anonymous)],
-    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-    redirectUrls: [],
-    request: Request {
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: true,
-      _maxListeners: undefined,
-      requestInitialized: true,
-      redirects: [],
-      retryCount: 0,
-      _progressCallbacks: [],
-      _eventsCount: 10,
-      write: [Function: onLockedWrite],
-      end: [Function: onLockedWrite],
-      options: [Object],
-      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-      _cannotHaveBody: false,
-      _noPipe: true,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(downloadedSize)]: 365,
-      [Symbol(uploadedSize)]: 74,
-      [Symbol(serverResponsesPiped)]: Set(0) {},
-      [Symbol(stopReading)]: true,
-      [Symbol(triggerRead)]: false,
-      [Symbol(jobs)]: [],
-      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"a75bad9f-9d1b-4a98-beb0-221f2c5afad1"}',
-      [Symbol(bodySize)]: 74,
-      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
-      [Symbol(unproxyEvents)]: [Function (anonymous)],
-      [Symbol(request)]: [ClientRequest],
-      [Symbol(originalResponse)]: [Circular *1],
-      [Symbol(isFromCache)]: false,
-      [Symbol(responseSize)]: 365,
-      [Symbol(response)]: [Circular *1],
-      [Symbol(startedReading)]: true
-    },
-    isFromCache: false,
-    ip: '127.0.0.1',
-    retryCount: 0,
-    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
-    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
-    [Symbol(shapeMode)]: true,
-    [Symbol(kCapture)]: false,
-    [Symbol(kHeaders)]: {
-      'content-type': 'application/json',
-      date: 'Mon, 24 Mar 2025 00:23:17 GMT',
-      'content-length': '365'
-    },
-    [Symbol(kHeadersCount)]: 6,
-    [Symbol(kTrailers)]: null,
-    [Symbol(kTrailersCount)]: 0
+    data: '<!DOCTYPE html><html><head><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills.js?ts=1742853883057"></script><script src="/_next/static/chunks/webpack.js?ts=1742853883057" defer=""></script><script src="/_next/static/chunks/main.js?ts=1742853883057" defer=""></script><script src="/_next/static/chunks/pages/_app.js?ts=1742853883057" defer=""></script><script src="/_next/static/chunks/pages/404.js?ts=1742853883057" defer=""></script><script src="/_next/static/development/_buildManifest.js?ts=1742853883057" defer=""></script><script src="/_next/static/development/_ssgManifest.js?ts=1742853883057" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script src="/_next/static/chunks/react-refresh.js?ts=1742853883057"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/404","query":{},"buildId":"development","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>'
   },
-  body: {
-    error_code: 103,
-    status_code: 502,
-    msg: 'failed to start tunnel',
-    details: {
-      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
-        'The tunnels already running on this session are:\n' +
-        'tn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\n' +
-        '\r\n' +
-        '\r\n' +
-        'ERR_NGROK_324\r\n'
-    }
-  }
+  status: 404
 }
-Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
-    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
-    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
-    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
-  response: <ref *1> IncomingMessage {
-    _events: {
-      close: undefined,
-      error: [Function],
-      data: undefined,
-      end: [Function: responseOnEnd],
-      readable: [Function (anonymous)],
-      aborted: [Array]
-    },
-    _readableState: ReadableState {
-      highWaterMark: 16384,
-      buffer: [],
-      bufferIndex: 0,
-      length: 0,
-      pipes: [],
-      awaitDrainWriters: null,
-      [Symbol(kState)]: 9996156
-    },
-    _maxListeners: undefined,
-    socket: null,
-    httpVersionMajor: 1,
-    httpVersionMinor: 1,
-    httpVersion: '1.1',
-    complete: true,
-    rawHeaders: [
-      'Content-Type',
-      'application/json',
-      'Date',
-      'Mon, 24 Mar 2025 00:23:33 GMT',
-      'Content-Length',
-      '365'
-    ],
-    rawTrailers: [],
-    joinDuplicateHeaders: undefined,
-    aborted: false,
-    upgrade: false,
-    url: 'http://127.0.0.1:4040/api/tunnels',
-    method: null,
-    statusCode: 502,
-    statusMessage: 'Bad Gateway',
-    client: Socket {
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: null,
-      _closeAfterHandlingError: false,
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _maxListeners: undefined,
-      _eventsCount: 6,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: null,
-      _server: null,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      _peername: [Object],
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TCP],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 3873070,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 19413,
-        [Symbol(triggerId)]: 19411
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: true,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0
-    },
-    _consuming: true,
-    _dumped: false,
-    req: ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: false,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: true,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: '74',
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [Socket],
-      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
-        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
-        'content-type: application/json\r\n' +
-        'accept: application/json\r\n' +
-        'content-length: 74\r\n' +
-        'accept-encoding: gzip, deflate, br\r\n' +
-        'Host: 127.0.0.1:4040\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'POST',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/api/tunnels',
-      _ended: true,
-      res: [Circular *1],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: false,
-      host: '127.0.0.1',
-      protocol: 'http:',
-      timings: [Object],
-      emit: [Function (anonymous)],
-      [Symbol(shapeMode)]: false,
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null,
-      [Symbol(reentry)]: true
-    },
-    _eventsCount: 4,
-    timings: {
-      start: 1742775813785,
-      socket: 1742775813785,
-      lookup: 1742775813785,
-      connect: 1742775813785,
-      secureConnect: undefined,
-      upload: 1742775813786,
-      response: 1742775813830,
-      end: 1742775813830,
-      error: undefined,
-      abort: undefined,
-      phases: [Object]
-    },
-    emit: [Function (anonymous)],
-    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-    redirectUrls: [],
-    request: Request {
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: true,
-      _maxListeners: undefined,
-      requestInitialized: true,
-      redirects: [],
-      retryCount: 0,
-      _progressCallbacks: [],
-      _eventsCount: 10,
-      write: [Function: onLockedWrite],
-      end: [Function: onLockedWrite],
-      options: [Object],
-      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-      _cannotHaveBody: false,
-      _noPipe: true,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(downloadedSize)]: 365,
-      [Symbol(uploadedSize)]: 74,
-      [Symbol(serverResponsesPiped)]: Set(0) {},
-      [Symbol(stopReading)]: true,
-      [Symbol(triggerRead)]: false,
-      [Symbol(jobs)]: [],
-      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"20d70aa3-8e92-4c28-9d55-ca375f98a2d7"}',
-      [Symbol(bodySize)]: 74,
-      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
-      [Symbol(unproxyEvents)]: [Function (anonymous)],
-      [Symbol(request)]: [ClientRequest],
-      [Symbol(originalResponse)]: [Circular *1],
-      [Symbol(isFromCache)]: false,
-      [Symbol(responseSize)]: 365,
-      [Symbol(response)]: [Circular *1],
-      [Symbol(startedReading)]: true
-    },
-    isFromCache: false,
-    ip: '127.0.0.1',
-    retryCount: 0,
-    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
-    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
-    [Symbol(shapeMode)]: true,
-    [Symbol(kCapture)]: false,
-    [Symbol(kHeaders)]: {
-      'content-type': 'application/json',
-      date: 'Mon, 24 Mar 2025 00:23:33 GMT',
-      'content-length': '365'
-    },
-    [Symbol(kHeadersCount)]: 6,
-    [Symbol(kTrailers)]: null,
-    [Symbol(kTrailersCount)]: 0
-  },
-  body: {
-    error_code: 103,
-    status_code: 502,
-    msg: 'failed to start tunnel',
-    details: {
-      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
-        'The tunnels already running on this session are:\n' +
-        'tn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\n' +
-        '\r\n' +
-        '\r\n' +
-        'ERR_NGROK_324\r\n'
-    }
-  }
-}
-Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
-    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
-    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
-    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
-  response: <ref *1> IncomingMessage {
-    _events: {
-      close: undefined,
-      error: [Function],
-      data: undefined,
-      end: [Function: responseOnEnd],
-      readable: [Function (anonymous)],
-      aborted: [Array]
-    },
-    _readableState: ReadableState {
-      highWaterMark: 16384,
-      buffer: [],
-      bufferIndex: 0,
-      length: 0,
-      pipes: [],
-      awaitDrainWriters: null,
-      [Symbol(kState)]: 9996156
-    },
-    _maxListeners: undefined,
-    socket: null,
-    httpVersionMajor: 1,
-    httpVersionMinor: 1,
-    httpVersion: '1.1',
-    complete: true,
-    rawHeaders: [
-      'Content-Type',
-      'application/json',
-      'Date',
-      'Mon, 24 Mar 2025 00:23:52 GMT',
-      'Content-Length',
-      '365'
-    ],
-    rawTrailers: [],
-    joinDuplicateHeaders: undefined,
-    aborted: false,
-    upgrade: false,
-    url: 'http://127.0.0.1:4040/api/tunnels',
-    method: null,
-    statusCode: 502,
-    statusMessage: 'Bad Gateway',
-    client: Socket {
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: null,
-      _closeAfterHandlingError: false,
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _maxListeners: undefined,
-      _eventsCount: 6,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: null,
-      _server: null,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      _peername: [Object],
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TCP],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 3891389,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 19541,
-        [Symbol(triggerId)]: 19539
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: true,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0
-    },
-    _consuming: true,
-    _dumped: false,
-    req: ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: false,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: true,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: '74',
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [Socket],
-      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
-        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
-        'content-type: application/json\r\n' +
-        'accept: application/json\r\n' +
-        'content-length: 74\r\n' +
-        'accept-encoding: gzip, deflate, br\r\n' +
-        'Host: 127.0.0.1:4040\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'POST',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/api/tunnels',
-      _ended: true,
-      res: [Circular *1],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: false,
-      host: '127.0.0.1',
-      protocol: 'http:',
-      timings: [Object],
-      emit: [Function (anonymous)],
-      [Symbol(shapeMode)]: false,
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null,
-      [Symbol(reentry)]: true
-    },
-    _eventsCount: 4,
-    timings: {
-      start: 1742775832098,
-      socket: 1742775832099,
-      lookup: 1742775832100,
-      connect: 1742775832100,
-      secureConnect: undefined,
-      upload: 1742775832100,
-      response: 1742775832150,
-      end: 1742775832150,
-      error: undefined,
-      abort: undefined,
-      phases: [Object]
-    },
-    emit: [Function (anonymous)],
-    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-    redirectUrls: [],
-    request: Request {
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: true,
-      _maxListeners: undefined,
-      requestInitialized: true,
-      redirects: [],
-      retryCount: 0,
-      _progressCallbacks: [],
-      _eventsCount: 10,
-      write: [Function: onLockedWrite],
-      end: [Function: onLockedWrite],
-      options: [Object],
-      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-      _cannotHaveBody: false,
-      _noPipe: true,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(downloadedSize)]: 365,
-      [Symbol(uploadedSize)]: 74,
-      [Symbol(serverResponsesPiped)]: Set(0) {},
-      [Symbol(stopReading)]: true,
-      [Symbol(triggerRead)]: false,
-      [Symbol(jobs)]: [],
-      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"e5e96f4c-814d-4ddb-8af1-dcc448b118d9"}',
-      [Symbol(bodySize)]: 74,
-      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
-      [Symbol(unproxyEvents)]: [Function (anonymous)],
-      [Symbol(request)]: [ClientRequest],
-      [Symbol(originalResponse)]: [Circular *1],
-      [Symbol(isFromCache)]: false,
-      [Symbol(responseSize)]: 365,
-      [Symbol(response)]: [Circular *1],
-      [Symbol(startedReading)]: true
-    },
-    isFromCache: false,
-    ip: '127.0.0.1',
-    retryCount: 0,
-    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
-    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM, tn_2ujppzrRobSkh9aRRtmZzl2YsZe\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
-    [Symbol(shapeMode)]: true,
-    [Symbol(kCapture)]: false,
-    [Symbol(kHeaders)]: {
-      'content-type': 'application/json',
-      date: 'Mon, 24 Mar 2025 00:23:52 GMT',
-      'content-length': '365'
-    },
-    [Symbol(kHeadersCount)]: 6,
-    [Symbol(kTrailers)]: null,
-    [Symbol(kTrailersCount)]: 0
-  },
-  body: {
-    error_code: 103,
-    status_code: 502,
-    msg: 'failed to start tunnel',
-    details: {
-      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
-        'The tunnels already running on this session are:\n' +
-        'tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM, tn_2ujppzrRobSkh9aRRtmZzl2YsZe\n' +
-        '\r\n' +
-        '\r\n' +
-        'ERR_NGROK_324\r\n'
-    }
-  }
-}
-Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
-    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
-    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
-    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
-  response: <ref *1> IncomingMessage {
-    _events: {
-      close: undefined,
-      error: [Function],
-      data: undefined,
-      end: [Function: responseOnEnd],
-      readable: [Function (anonymous)],
-      aborted: [Array]
-    },
-    _readableState: ReadableState {
-      highWaterMark: 16384,
-      buffer: [],
-      bufferIndex: 0,
-      length: 0,
-      pipes: [],
-      awaitDrainWriters: null,
-      [Symbol(kState)]: 9996156
-    },
-    _maxListeners: undefined,
-    socket: null,
-    httpVersionMajor: 1,
-    httpVersionMinor: 1,
-    httpVersion: '1.1',
-    complete: true,
-    rawHeaders: [
-      'Content-Type',
-      'application/json',
-      'Date',
-      'Mon, 24 Mar 2025 00:28:05 GMT',
-      'Content-Length',
-      '365'
-    ],
-    rawTrailers: [],
-    joinDuplicateHeaders: undefined,
-    aborted: false,
-    upgrade: false,
-    url: 'http://127.0.0.1:4040/api/tunnels',
-    method: null,
-    statusCode: 502,
-    statusMessage: 'Bad Gateway',
-    client: Socket {
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: null,
-      _closeAfterHandlingError: false,
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _maxListeners: undefined,
-      _eventsCount: 6,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: null,
-      _server: null,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      _peername: [Object],
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TCP],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 4144554,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 20450,
-        [Symbol(triggerId)]: 20448
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: true,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0
-    },
-    _consuming: true,
-    _dumped: false,
-    req: ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: false,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: true,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: '74',
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [Socket],
-      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
-        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
-        'content-type: application/json\r\n' +
-        'accept: application/json\r\n' +
-        'content-length: 74\r\n' +
-        'accept-encoding: gzip, deflate, br\r\n' +
-        'Host: 127.0.0.1:4040\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'POST',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/api/tunnels',
-      _ended: true,
-      res: [Circular *1],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: false,
-      host: '127.0.0.1',
-      protocol: 'http:',
-      timings: [Object],
-      emit: [Function (anonymous)],
-      [Symbol(shapeMode)]: false,
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null,
-      [Symbol(reentry)]: true
-    },
-    _eventsCount: 4,
-    timings: {
-      start: 1742776085264,
-      socket: 1742776085265,
-      lookup: 1742776085265,
-      connect: 1742776085265,
-      secureConnect: undefined,
-      upload: 1742776085266,
-      response: 1742776085315,
-      end: 1742776085315,
-      error: undefined,
-      abort: undefined,
-      phases: [Object]
-    },
-    emit: [Function (anonymous)],
-    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-    redirectUrls: [],
-    request: Request {
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: true,
-      _maxListeners: undefined,
-      requestInitialized: true,
-      redirects: [],
-      retryCount: 0,
-      _progressCallbacks: [],
-      _eventsCount: 10,
-      write: [Function: onLockedWrite],
-      end: [Function: onLockedWrite],
-      options: [Object],
-      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-      _cannotHaveBody: false,
-      _noPipe: true,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(downloadedSize)]: 365,
-      [Symbol(uploadedSize)]: 74,
-      [Symbol(serverResponsesPiped)]: Set(0) {},
-      [Symbol(stopReading)]: true,
-      [Symbol(triggerRead)]: false,
-      [Symbol(jobs)]: [],
-      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"79307297-c176-416d-b81b-864c7df9165e"}',
-      [Symbol(bodySize)]: 74,
-      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
-      [Symbol(unproxyEvents)]: [Function (anonymous)],
-      [Symbol(request)]: [ClientRequest],
-      [Symbol(originalResponse)]: [Circular *1],
-      [Symbol(isFromCache)]: false,
-      [Symbol(responseSize)]: 365,
-      [Symbol(response)]: [Circular *1],
-      [Symbol(startedReading)]: true
-    },
-    isFromCache: false,
-    ip: '127.0.0.1',
-    retryCount: 0,
-    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
-    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
-    [Symbol(shapeMode)]: true,
-    [Symbol(kCapture)]: false,
-    [Symbol(kHeaders)]: {
-      'content-type': 'application/json',
-      date: 'Mon, 24 Mar 2025 00:28:05 GMT',
-      'content-length': '365'
-    },
-    [Symbol(kHeadersCount)]: 6,
-    [Symbol(kTrailers)]: null,
-    [Symbol(kTrailersCount)]: 0
-  },
-  body: {
-    error_code: 103,
-    status_code: 502,
-    msg: 'failed to start tunnel',
-    details: {
-      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
-        'The tunnels already running on this session are:\n' +
-        'tn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\n' +
-        '\r\n' +
-        '\r\n' +
-        'ERR_NGROK_324\r\n'
-    }
-  }
-}
-Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
-    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
-    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
-    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
-  response: <ref *1> IncomingMessage {
-    _events: {
-      close: undefined,
-      error: [Function],
-      data: undefined,
-      end: [Function: responseOnEnd],
-      readable: [Function (anonymous)],
-      aborted: [Array]
-    },
-    _readableState: ReadableState {
-      highWaterMark: 16384,
-      buffer: [],
-      bufferIndex: 0,
-      length: 0,
-      pipes: [],
-      awaitDrainWriters: null,
-      [Symbol(kState)]: 9996156
-    },
-    _maxListeners: undefined,
-    socket: null,
-    httpVersionMajor: 1,
-    httpVersionMinor: 1,
-    httpVersion: '1.1',
-    complete: true,
-    rawHeaders: [
-      'Content-Type',
-      'application/json',
-      'Date',
-      'Mon, 24 Mar 2025 00:28:22 GMT',
-      'Content-Length',
-      '365'
-    ],
-    rawTrailers: [],
-    joinDuplicateHeaders: undefined,
-    aborted: false,
-    upgrade: false,
-    url: 'http://127.0.0.1:4040/api/tunnels',
-    method: null,
-    statusCode: 502,
-    statusMessage: 'Bad Gateway',
-    client: Socket {
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: null,
-      _closeAfterHandlingError: false,
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _maxListeners: undefined,
-      _eventsCount: 6,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: null,
-      _server: null,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      _peername: [Object],
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TCP],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 4161834,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 20575,
-        [Symbol(triggerId)]: 20573
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: true,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0
-    },
-    _consuming: true,
-    _dumped: false,
-    req: ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: false,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: true,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: '74',
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [Socket],
-      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
-        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
-        'content-type: application/json\r\n' +
-        'accept: application/json\r\n' +
-        'content-length: 74\r\n' +
-        'accept-encoding: gzip, deflate, br\r\n' +
-        'Host: 127.0.0.1:4040\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'POST',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/api/tunnels',
-      _ended: true,
-      res: [Circular *1],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: false,
-      host: '127.0.0.1',
-      protocol: 'http:',
-      timings: [Object],
-      emit: [Function (anonymous)],
-      [Symbol(shapeMode)]: false,
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null,
-      [Symbol(reentry)]: true
-    },
-    _eventsCount: 4,
-    timings: {
-      start: 1742776102552,
-      socket: 1742776102553,
-      lookup: 1742776102554,
-      connect: 1742776102554,
-      secureConnect: undefined,
-      upload: 1742776102554,
-      response: 1742776102594,
-      end: 1742776102595,
-      error: undefined,
-      abort: undefined,
-      phases: [Object]
-    },
-    emit: [Function (anonymous)],
-    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-    redirectUrls: [],
-    request: Request {
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: true,
-      _maxListeners: undefined,
-      requestInitialized: true,
-      redirects: [],
-      retryCount: 0,
-      _progressCallbacks: [],
-      _eventsCount: 10,
-      write: [Function: onLockedWrite],
-      end: [Function: onLockedWrite],
-      options: [Object],
-      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-      _cannotHaveBody: false,
-      _noPipe: true,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(downloadedSize)]: 365,
-      [Symbol(uploadedSize)]: 74,
-      [Symbol(serverResponsesPiped)]: Set(0) {},
-      [Symbol(stopReading)]: true,
-      [Symbol(triggerRead)]: false,
-      [Symbol(jobs)]: [],
-      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"a64c8be5-a101-49da-9d5d-1d8d18a22b62"}',
-      [Symbol(bodySize)]: 74,
-      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
-      [Symbol(unproxyEvents)]: [Function (anonymous)],
-      [Symbol(request)]: [ClientRequest],
-      [Symbol(originalResponse)]: [Circular *1],
-      [Symbol(isFromCache)]: false,
-      [Symbol(responseSize)]: 365,
-      [Symbol(response)]: [Circular *1],
-      [Symbol(startedReading)]: true
-    },
-    isFromCache: false,
-    ip: '127.0.0.1',
-    retryCount: 0,
-    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
-    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
-    [Symbol(shapeMode)]: true,
-    [Symbol(kCapture)]: false,
-    [Symbol(kHeaders)]: {
-      'content-type': 'application/json',
-      date: 'Mon, 24 Mar 2025 00:28:22 GMT',
-      'content-length': '365'
-    },
-    [Symbol(kHeadersCount)]: 6,
-    [Symbol(kTrailers)]: null,
-    [Symbol(kTrailersCount)]: 0
-  },
-  body: {
-    error_code: 103,
-    status_code: 502,
-    msg: 'failed to start tunnel',
-    details: {
-      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
-        'The tunnels already running on this session are:\n' +
-        'tn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\n' +
-        '\r\n' +
-        '\r\n' +
-        'ERR_NGROK_324\r\n'
-    }
-  }
-}
-Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
-    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
-    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
-    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
-  response: <ref *1> IncomingMessage {
-    _events: {
-      close: undefined,
-      error: [Function],
-      data: undefined,
-      end: [Function: responseOnEnd],
-      readable: [Function (anonymous)],
-      aborted: [Array]
-    },
-    _readableState: ReadableState {
-      highWaterMark: 16384,
-      buffer: [],
-      bufferIndex: 0,
-      length: 0,
-      pipes: [],
-      awaitDrainWriters: null,
-      [Symbol(kState)]: 9996156
-    },
-    _maxListeners: undefined,
-    socket: null,
-    httpVersionMajor: 1,
-    httpVersionMinor: 1,
-    httpVersion: '1.1',
-    complete: true,
-    rawHeaders: [
-      'Content-Type',
-      'application/json',
-      'Date',
-      'Mon, 24 Mar 2025 00:29:13 GMT',
-      'Content-Length',
-      '365'
-    ],
-    rawTrailers: [],
-    joinDuplicateHeaders: undefined,
-    aborted: false,
-    upgrade: false,
-    url: 'http://127.0.0.1:4040/api/tunnels',
-    method: null,
-    statusCode: 502,
-    statusMessage: 'Bad Gateway',
-    client: Socket {
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: null,
-      _closeAfterHandlingError: false,
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _maxListeners: undefined,
-      _eventsCount: 6,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: null,
-      _server: null,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      _peername: [Object],
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TCP],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 4212766,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 20802,
-        [Symbol(triggerId)]: 20800
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: true,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0
-    },
-    _consuming: true,
-    _dumped: false,
-    req: ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: false,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: true,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: '74',
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [Socket],
-      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
-        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
-        'content-type: application/json\r\n' +
-        'accept: application/json\r\n' +
-        'content-length: 74\r\n' +
-        'accept-encoding: gzip, deflate, br\r\n' +
-        'Host: 127.0.0.1:4040\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'POST',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/api/tunnels',
-      _ended: true,
-      res: [Circular *1],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: false,
-      host: '127.0.0.1',
-      protocol: 'http:',
-      timings: [Object],
-      emit: [Function (anonymous)],
-      [Symbol(shapeMode)]: false,
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null,
-      [Symbol(reentry)]: true
-    },
-    _eventsCount: 4,
-    timings: {
-      start: 1742776153493,
-      socket: 1742776153493,
-      lookup: 1742776153495,
-      connect: 1742776153495,
-      secureConnect: undefined,
-      upload: 1742776153496,
-      response: 1742776153527,
-      end: 1742776153528,
-      error: undefined,
-      abort: undefined,
-      phases: [Object]
-    },
-    emit: [Function (anonymous)],
-    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-    redirectUrls: [],
-    request: Request {
-      _events: [Object],
-      _readableState: [ReadableState],
-      _writableState: [WritableState],
-      allowHalfOpen: true,
-      _maxListeners: undefined,
-      requestInitialized: true,
-      redirects: [],
-      retryCount: 0,
-      _progressCallbacks: [],
-      _eventsCount: 10,
-      write: [Function: onLockedWrite],
-      end: [Function: onLockedWrite],
-      options: [Object],
-      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
-      _cannotHaveBody: false,
-      _noPipe: true,
-      [Symbol(shapeMode)]: true,
-      [Symbol(kCapture)]: false,
-      [Symbol(downloadedSize)]: 365,
-      [Symbol(uploadedSize)]: 74,
-      [Symbol(serverResponsesPiped)]: Set(0) {},
-      [Symbol(stopReading)]: true,
-      [Symbol(triggerRead)]: false,
-      [Symbol(jobs)]: [],
-      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"aa821663-a02f-4b0d-a47e-7e4f1b67a7d5"}',
-      [Symbol(bodySize)]: 74,
-      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
-      [Symbol(unproxyEvents)]: [Function (anonymous)],
-      [Symbol(request)]: [ClientRequest],
-      [Symbol(originalResponse)]: [Circular *1],
-      [Symbol(isFromCache)]: false,
-      [Symbol(responseSize)]: 365,
-      [Symbol(response)]: [Circular *1],
-      [Symbol(startedReading)]: true
-    },
-    isFromCache: false,
-    ip: '127.0.0.1',
-    retryCount: 0,
-    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
-    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
-    [Symbol(shapeMode)]: true,
-    [Symbol(kCapture)]: false,
-    [Symbol(kHeaders)]: {
-      'content-type': 'application/json',
-      date: 'Mon, 24 Mar 2025 00:29:13 GMT',
-      'content-length': '365'
-    },
-    [Symbol(kHeadersCount)]: 6,
-    [Symbol(kTrailers)]: null,
-    [Symbol(kTrailersCount)]: 0
-  },
-  body: {
-    error_code: 103,
-    status_code: 502,
-    msg: 'failed to start tunnel',
-    details: {
-      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
-        'The tunnels already running on this session are:\n' +
-        'tn_2ujppzrRobSkh9aRRtmZzl2YsZe, tn_2ujrYho8YJ9Rsr6fZa6eN18uGBZ, tn_2ujxQLqZBSuM9RJ5unpr6VYCYPM\n' +
-        '\r\n' +
-        '\r\n' +
-        'ERR_NGROK_324\r\n'
-    }
-  }
-}
-(node:21692) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:12568) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:21692) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:12568) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:29216) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29216) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:18096) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18096) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:26820) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26820) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:29844) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29844) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:28436) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28436) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:16280) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16280) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:1072) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1072) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:29536) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29536) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:17236) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17236) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:30640) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30640) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:23792) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23792) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:10384) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10384) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:33720) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33720) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:20616) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20616) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:22124) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22124) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:24004) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24004) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:27204) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27204) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:28140) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28140) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:18280) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18280) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:12300) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12300) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:26964) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26964) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:32384) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32384) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:16388) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16388) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:30360) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30360) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (c:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (c:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:14728) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14728) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Erro ao se conectar com o servidor localhost 5500: AxiosError: Request failed with status code 404
+    at settle (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:2031:12)
+    at Unzip.handleStreamEnd (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:3148:11)
+    at Unzip.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exports.login (c:\dev\teste-app-exec\src\backend\controllers\authController.js:56:24) {
+  code: 'ERR_BAD_REQUEST',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.8.3',
+      'Content-Length': '99',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+    data: '{"connectionUrl":"https://5024-186-224-155-162.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+    allowAbsoluteUrls: true
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: '99',
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'localhost',
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _eventsCount: 6,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      autoSelectFamilyAttemptedAddresses: [Array],
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 35703,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 458,
+        [Symbol(triggerId)]: 456
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.8.3\r\n' +
+      'Content-Length: 99\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: localhost:3000\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 2,
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/api/connection/sendConnectionUrl',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 404,
+      statusMessage: 'Not Found',
+      client: [Socket],
+      _consuming: true,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 20,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'localhost',
+    protocol: 'http:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 99,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 404,
+    statusText: 'Not Found',
+    headers: Object [AxiosHeaders] {
+      'cache-control': 'no-store, must-revalidate',
+      'x-powered-by': 'Next.js',
+      etag: '"vi8nnv9sd10h"',
+      'content-type': 'text/html; charset=utf-8',
+      vary: 'Accept-Encoding',
+      date: 'Mon, 24 Mar 2025 22:10:11 GMT',
+      connection: 'keep-alive',
+      'keep-alive': 'timeout=5',
+      'transfer-encoding': 'chunked'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      method: 'post',
+      url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      data: '{"connectionUrl":"https://5024-186-224-155-162.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+      allowAbsoluteUrls: true
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '99',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [Socket],
+      _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: axios/1.8.3\r\n' +
+        'Content-Length: 99\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: localhost:3000\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/connection/sendConnectionUrl',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'localhost',
+      protocol: 'http:',
+      _redirectable: [Writable],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: '<!DOCTYPE html><html><head><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills.js?ts=1742854211969"></script><script src="/_next/static/chunks/webpack.js?ts=1742854211969" defer=""></script><script src="/_next/static/chunks/main.js?ts=1742854211969" defer=""></script><script src="/_next/static/chunks/pages/_app.js?ts=1742854211969" defer=""></script><script src="/_next/static/chunks/pages/404.js?ts=1742854211969" defer=""></script><script src="/_next/static/development/_buildManifest.js?ts=1742854211969" defer=""></script><script src="/_next/static/development/_ssgManifest.js?ts=1742854211969" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script src="/_next/static/chunks/react-refresh.js?ts=1742854211969"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/404","query":{},"buildId":"development","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>'
+  },
+  status: 404
+}
+Erro ao se conectar com o servidor localhost 5500: AxiosError: Request failed with status code 404
+    at settle (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:2031:12)
+    at Unzip.handleStreamEnd (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:3148:11)
+    at Unzip.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exports.login (c:\dev\teste-app-exec\src\backend\controllers\authController.js:56:24) {
+  code: 'ERR_BAD_REQUEST',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.8.3',
+      'Content-Length': '99',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+    data: '{"connectionUrl":"https://c35f-186-224-155-162.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+    allowAbsoluteUrls: true
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: '99',
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'localhost',
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _eventsCount: 6,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      autoSelectFamilyAttemptedAddresses: [Array],
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 126204,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 850,
+        [Symbol(triggerId)]: 848
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.8.3\r\n' +
+      'Content-Length: 99\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: localhost:3000\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 2,
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/api/connection/sendConnectionUrl',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 404,
+      statusMessage: 'Not Found',
+      client: [Socket],
+      _consuming: true,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 20,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'localhost',
+    protocol: 'http:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 99,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 404,
+    statusText: 'Not Found',
+    headers: Object [AxiosHeaders] {
+      'cache-control': 'no-store, must-revalidate',
+      'x-powered-by': 'Next.js',
+      etag: '"7j71418j7v10h"',
+      'content-type': 'text/html; charset=utf-8',
+      vary: 'Accept-Encoding',
+      date: 'Mon, 24 Mar 2025 22:11:42 GMT',
+      connection: 'keep-alive',
+      'keep-alive': 'timeout=5',
+      'transfer-encoding': 'chunked'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      method: 'post',
+      url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      data: '{"connectionUrl":"https://c35f-186-224-155-162.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+      allowAbsoluteUrls: true
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '99',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [Socket],
+      _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: axios/1.8.3\r\n' +
+        'Content-Length: 99\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: localhost:3000\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/connection/sendConnectionUrl',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'localhost',
+      protocol: 'http:',
+      _redirectable: [Writable],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: '<!DOCTYPE html><html><head><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills.js?ts=1742854302468"></script><script src="/_next/static/chunks/webpack.js?ts=1742854302468" defer=""></script><script src="/_next/static/chunks/main.js?ts=1742854302468" defer=""></script><script src="/_next/static/chunks/pages/_app.js?ts=1742854302468" defer=""></script><script src="/_next/static/chunks/pages/404.js?ts=1742854302468" defer=""></script><script src="/_next/static/development/_buildManifest.js?ts=1742854302468" defer=""></script><script src="/_next/static/development/_ssgManifest.js?ts=1742854302468" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script src="/_next/static/chunks/react-refresh.js?ts=1742854302468"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/404","query":{},"buildId":"development","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>'
+  },
+  status: 404
+}
+Erro ao se conectar com o servidor localhost 5500: AxiosError: Request failed with status code 404
+    at settle (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:2031:12)
+    at Unzip.handleStreamEnd (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:3148:11)
+    at Unzip.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (c:\dev\teste-app-exec\node_modules\axios\dist\node\axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exports.login (c:\dev\teste-app-exec\src\backend\controllers\authController.js:56:24) {
+  code: 'ERR_BAD_REQUEST',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.8.3',
+      'Content-Length': '99',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+    data: '{"connectionUrl":"https://1da1-186-224-155-162.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+    allowAbsoluteUrls: true
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: '99',
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'localhost',
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _eventsCount: 6,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      autoSelectFamilyAttemptedAddresses: [Array],
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 248980,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 1351,
+        [Symbol(triggerId)]: 1349
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.8.3\r\n' +
+      'Content-Length: 99\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: localhost:3000\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 2,
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/api/connection/sendConnectionUrl',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 404,
+      statusMessage: 'Not Found',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 20,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'localhost',
+    protocol: 'http:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 99,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 404,
+    statusText: 'Not Found',
+    headers: Object [AxiosHeaders] {
+      'cache-control': 'no-store, must-revalidate',
+      'x-powered-by': 'Next.js',
+      etag: '"ia8q2r71uj10h"',
+      'content-type': 'text/html; charset=utf-8',
+      vary: 'Accept-Encoding',
+      date: 'Mon, 24 Mar 2025 22:13:45 GMT',
+      connection: 'keep-alive',
+      'keep-alive': 'timeout=5',
+      'transfer-encoding': 'chunked'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      method: 'post',
+      url: 'http://localhost:3000/api/connection/sendConnectionUrl',
+      data: '{"connectionUrl":"https://1da1-186-224-155-162.ngrok-free.app","userId":"67dd4c62a43d620ced89844a"}',
+      allowAbsoluteUrls: true
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '99',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [Socket],
+      _header: 'POST /api/connection/sendConnectionUrl HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: axios/1.8.3\r\n' +
+        'Content-Length: 99\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: localhost:3000\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/connection/sendConnectionUrl',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'localhost',
+      protocol: 'http:',
+      _redirectable: [Writable],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: '<!DOCTYPE html><html><head><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills.js?ts=1742854425242"></script><script src="/_next/static/chunks/webpack.js?ts=1742854425242" defer=""></script><script src="/_next/static/chunks/main.js?ts=1742854425242" defer=""></script><script src="/_next/static/chunks/pages/_app.js?ts=1742854425242" defer=""></script><script src="/_next/static/chunks/pages/404.js?ts=1742854425242" defer=""></script><script src="/_next/static/development/_buildManifest.js?ts=1742854425242" defer=""></script><script src="/_next/static/development/_ssgManifest.js?ts=1742854425242" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script src="/_next/static/chunks/react-refresh.js?ts=1742854425242"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/404","query":{},"buildId":"development","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>'
+  },
+  status: 404
+}
+Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
+    at NgrokClient.request (c:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectRetry (c:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
+    at async startNgrok (c:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
+    at async exports.login (c:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
+  response: <ref *1> IncomingMessage {
+    _events: {
+      close: undefined,
+      error: [Function],
+      data: undefined,
+      end: [Function: responseOnEnd],
+      readable: [Function (anonymous)],
+      aborted: [Array]
+    },
+    _readableState: ReadableState {
+      highWaterMark: 16384,
+      buffer: [],
+      bufferIndex: 0,
+      length: 0,
+      pipes: [],
+      awaitDrainWriters: null,
+      [Symbol(kState)]: 9996156
+    },
+    _maxListeners: undefined,
+    socket: null,
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'Content-Type',
+      'application/json',
+      'Date',
+      'Mon, 24 Mar 2025 22:14:13 GMT',
+      'Content-Length',
+      '365'
+    ],
+    rawTrailers: [],
+    joinDuplicateHeaders: undefined,
+    aborted: false,
+    upgrade: false,
+    url: 'http://127.0.0.1:4040/api/tunnels',
+    method: null,
+    statusCode: 502,
+    statusMessage: 'Bad Gateway',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _eventsCount: 6,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      _peername: [Object],
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 276753,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 1509,
+        [Symbol(triggerId)]: 1507
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _consuming: true,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '74',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [Socket],
+      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
+        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
+        'content-type: application/json\r\n' +
+        'accept: application/json\r\n' +
+        'content-length: 74\r\n' +
+        'accept-encoding: gzip, deflate, br\r\n' +
+        'Host: 127.0.0.1:4040\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/tunnels',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      timings: [Object],
+      emit: [Function (anonymous)],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null,
+      [Symbol(reentry)]: true
+    },
+    _eventsCount: 4,
+    timings: {
+      start: 1742854452974,
+      socket: 1742854452974,
+      lookup: 1742854452974,
+      connect: 1742854452974,
+      secureConnect: undefined,
+      upload: 1742854452974,
+      response: 1742854453026,
+      end: 1742854453027,
+      error: undefined,
+      abort: undefined,
+      phases: [Object]
+    },
+    emit: [Function (anonymous)],
+    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
+    redirectUrls: [],
+    request: Request {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: true,
+      _maxListeners: undefined,
+      requestInitialized: true,
+      redirects: [],
+      retryCount: 0,
+      _progressCallbacks: [],
+      _eventsCount: 10,
+      write: [Function: onLockedWrite],
+      end: [Function: onLockedWrite],
+      options: [Object],
+      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
+      _cannotHaveBody: false,
+      _noPipe: true,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(downloadedSize)]: 365,
+      [Symbol(uploadedSize)]: 74,
+      [Symbol(serverResponsesPiped)]: Set(0) {},
+      [Symbol(stopReading)]: true,
+      [Symbol(triggerRead)]: false,
+      [Symbol(jobs)]: [],
+      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"c44f9710-21e4-4526-805f-a8071b9f9839"}',
+      [Symbol(bodySize)]: 74,
+      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
+      [Symbol(unproxyEvents)]: [Function (anonymous)],
+      [Symbol(request)]: [ClientRequest],
+      [Symbol(originalResponse)]: [Circular *1],
+      [Symbol(isFromCache)]: false,
+      [Symbol(responseSize)]: 365,
+      [Symbol(response)]: [Circular *1],
+      [Symbol(startedReading)]: true
+    },
+    isFromCache: false,
+    ip: '127.0.0.1',
+    retryCount: 0,
+    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
+    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2umWQIbGgKlE4lV9fgeOKFy36Qk, tn_2umWbVpQUDPU6zuKg9lAwThN2uD, tn_2umWr2aMyqB2aFHdjVk9hGMZtuj\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'content-type': 'application/json',
+      date: 'Mon, 24 Mar 2025 22:14:13 GMT',
+      'content-length': '365'
+    },
+    [Symbol(kHeadersCount)]: 6,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0
+  },
+  body: {
+    error_code: 103,
+    status_code: 502,
+    msg: 'failed to start tunnel',
+    details: {
+      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
+        'The tunnels already running on this session are:\n' +
+        'tn_2umWQIbGgKlE4lV9fgeOKFy36Qk, tn_2umWbVpQUDPU6zuKg9lAwThN2uD, tn_2umWr2aMyqB2aFHdjVk9hGMZtuj\n' +
+        '\r\n' +
+        '\r\n' +
+        'ERR_NGROK_324\r\n'
+    }
+  }
+}
+Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
+    at NgrokClient.request (c:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectRetry (c:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
+    at async startNgrok (c:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
+    at async exports.login (c:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
+  response: <ref *1> IncomingMessage {
+    _events: {
+      close: undefined,
+      error: [Function],
+      data: undefined,
+      end: [Function: responseOnEnd],
+      readable: [Function (anonymous)],
+      aborted: [Array]
+    },
+    _readableState: ReadableState {
+      highWaterMark: 16384,
+      buffer: [],
+      bufferIndex: 0,
+      length: 0,
+      pipes: [],
+      awaitDrainWriters: null,
+      [Symbol(kState)]: 9996156
+    },
+    _maxListeners: undefined,
+    socket: null,
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'Content-Type',
+      'application/json',
+      'Date',
+      'Mon, 24 Mar 2025 22:16:29 GMT',
+      'Content-Length',
+      '365'
+    ],
+    rawTrailers: [],
+    joinDuplicateHeaders: undefined,
+    aborted: false,
+    upgrade: false,
+    url: 'http://127.0.0.1:4040/api/tunnels',
+    method: null,
+    statusCode: 502,
+    statusMessage: 'Bad Gateway',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _eventsCount: 6,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      _peername: [Object],
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 412897,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 2019,
+        [Symbol(triggerId)]: 2017
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _consuming: true,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '74',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [Socket],
+      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
+        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
+        'content-type: application/json\r\n' +
+        'accept: application/json\r\n' +
+        'content-length: 74\r\n' +
+        'accept-encoding: gzip, deflate, br\r\n' +
+        'Host: 127.0.0.1:4040\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/tunnels',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      timings: [Object],
+      emit: [Function (anonymous)],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null,
+      [Symbol(reentry)]: true
+    },
+    _eventsCount: 4,
+    timings: {
+      start: 1742854589057,
+      socket: 1742854589058,
+      lookup: 1742854589058,
+      connect: 1742854589058,
+      secureConnect: undefined,
+      upload: 1742854589058,
+      response: 1742854589170,
+      end: 1742854589171,
+      error: undefined,
+      abort: undefined,
+      phases: [Object]
+    },
+    emit: [Function (anonymous)],
+    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
+    redirectUrls: [],
+    request: Request {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: true,
+      _maxListeners: undefined,
+      requestInitialized: true,
+      redirects: [],
+      retryCount: 0,
+      _progressCallbacks: [],
+      _eventsCount: 10,
+      write: [Function: onLockedWrite],
+      end: [Function: onLockedWrite],
+      options: [Object],
+      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
+      _cannotHaveBody: false,
+      _noPipe: true,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(downloadedSize)]: 365,
+      [Symbol(uploadedSize)]: 74,
+      [Symbol(serverResponsesPiped)]: Set(0) {},
+      [Symbol(stopReading)]: true,
+      [Symbol(triggerRead)]: false,
+      [Symbol(jobs)]: [],
+      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"f670afc9-8ef6-4c78-8771-cd9c70a1539f"}',
+      [Symbol(bodySize)]: 74,
+      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
+      [Symbol(unproxyEvents)]: [Function (anonymous)],
+      [Symbol(request)]: [ClientRequest],
+      [Symbol(originalResponse)]: [Circular *1],
+      [Symbol(isFromCache)]: false,
+      [Symbol(responseSize)]: 365,
+      [Symbol(response)]: [Circular *1],
+      [Symbol(startedReading)]: true
+    },
+    isFromCache: false,
+    ip: '127.0.0.1',
+    retryCount: 0,
+    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
+    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2umWbVpQUDPU6zuKg9lAwThN2uD, tn_2umWr2aMyqB2aFHdjVk9hGMZtuj, tn_2umWQIbGgKlE4lV9fgeOKFy36Qk\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'content-type': 'application/json',
+      date: 'Mon, 24 Mar 2025 22:16:29 GMT',
+      'content-length': '365'
+    },
+    [Symbol(kHeadersCount)]: 6,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0
+  },
+  body: {
+    error_code: 103,
+    status_code: 502,
+    msg: 'failed to start tunnel',
+    details: {
+      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
+        'The tunnels already running on this session are:\n' +
+        'tn_2umWbVpQUDPU6zuKg9lAwThN2uD, tn_2umWr2aMyqB2aFHdjVk9hGMZtuj, tn_2umWQIbGgKlE4lV9fgeOKFy36Qk\n' +
+        '\r\n' +
+        '\r\n' +
+        'ERR_NGROK_324\r\n'
+    }
+  }
+}
+(node:33344) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33344) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:21596) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21596) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:13528) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13528) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:7908) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7908) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:10732) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10732) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:32304) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32304) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:29748) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29748) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:22284) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22284) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:32324) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32324) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Error: listen EADDRINUSE: address already in use :::6890
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\dev\teste-app-exec\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\dev\teste-app-exec\src\backend\server.js:91:5)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Object.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 6890
+}
+(node:26972) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26972) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Erro ao tentar logar com a conta fiora_ofc: POST /api/v1/accounts/login/ - 400 Bad Request; We can send you an email to help you get back into your account.
+(node:20368) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20368) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Erro ao iniciar o ngrok: RequestError: connect ECONNREFUSED 127.0.0.1:4041
+    at ClientRequest.<anonymous> (C:\dev\teste-app-exec\node_modules\got\dist\source\core\index.js:970:111)
+    at Object.onceWrapper (node:events:633:26)
+    at ClientRequest.emit (node:events:530:35)
+    at origin.emit (C:\dev\teste-app-exec\node_modules\@szmarczak\http-timer\dist\source\index.js:43:20)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16) {
+  code: 'ECONNREFUSED',
+  timings: {
+    start: 1742945971199,
+    socket: 1742945971200,
+    lookup: undefined,
+    connect: undefined,
+    secureConnect: undefined,
+    upload: undefined,
+    response: undefined,
+    end: undefined,
+    error: 1742945971202,
+    abort: undefined,
+    phases: {
+      wait: 1,
+      dns: undefined,
+      tcp: undefined,
+      tls: undefined,
+      request: undefined,
+      firstByte: undefined,
+      download: undefined,
+      total: 3
+    }
+  }
+}

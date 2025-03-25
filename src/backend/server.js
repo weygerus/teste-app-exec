@@ -53,7 +53,7 @@ async function handleDisconnect() {
 
     const userId = await getuserId();
 
-    const response = await axios.post(`https://gerenc-insta.onrender.com/api/connection/deleteConnectionUrl/${userId}`, {
+    const response = await axios.post(`http://localhost:3000/api/connection/deleteConnectionUrl/${userId}`, {
       mensagem: "Servidor desconectado",
     });
 
