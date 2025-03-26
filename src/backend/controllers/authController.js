@@ -14,74 +14,96 @@ const User = mongoose.model('User')
 let sessionUserId = "";
 const startNgrok = async () => {
   try {
-    const url = await ngrok.connect(6890);
+    const url = await ngrok.connect(7890);
     console.log(`ngrok túnel aberto em: ${url}`);
     return url;
   } catch (err) {
     console.error('Erro ao iniciar o ngrok:', err);
     return undefined;
   }
-};
+}
+
+
+async function sendConnectionUrlToWebApi(connectionURL, userID, data) {
+
+  try {
+
+    const response = await axios.post('https://gerenc-insta-deld.onrender.com/api/connection/sendConnectionUrl', {
+      connectionUrl: connectionURL, userId: userID
+    });
+
+    if (response.status == 200) {
+
+      const message = 'Conexão bem-sucedida ao APP';
+      return message;
+    }
+    else {
+
+      const message = 'Erro ao se conectar ao APP';
+      return message;
+    }
+
+
+  } catch (error) {
+
+    console.error('Erro ao enviar a url de conexão:', error);
+    return res.status(400).json({ message: 'Erro ao enviar a url de conexão:', error: error.message });
+  }
+}
 
 exports.login = async (req, res) => {
 
-  const { username, password } = req.body;
-  console.log(username, password);
+  console.log("ok");
+  const { username, password } = req.body
 
-  const user = await User.findOne({username}).populate('instaAccounts');
+  console.log("ok", username, password);
 
-  if (!user) {
+  try {
 
-    return res.status(404).json({ message: 'Usuário não encontrado' })
-  }
+    const response = await axios.post('http://localhost:3000/api/auth/login', {
+      username, password
+    });
 
-  const isMatch = await bcrypt.compare(password, user.password)
+    const data = response.data;
+    console.log(response)
 
-  if (!isMatch) return res.status(400).json({ message: 'Senha incorreta!' })
+    
+    if (response.status == 200) {
+      
+      console.log("okkk", username, password);
 
-  const acessToken = jwt.sign({ id: user._id, role: user.role }, secret, {
+      const userId = data.user._id;
+      const connectionUrl = await startNgrok();
+      console.log("connectionUrl:", connectionUrl,userId)
 
-    expiresIn: '7d'
-  })
+        const result = await sendConnectionUrlToWebApi(connectionUrl, userId, data);
+        console.log("result:", result)
 
-  const connectionUrl = await startNgrok();
+        if (result === 'Conexão bem-sucedida ao APP') {
 
-  if (connectionUrl == undefined) {
+          return res.status(200).json({
 
-    return res.status(400).json({ message: 'O servidor local não conseguiu se conectar ao APP!' })
-  }
-  else if (connectionUrl) {
+            message: result,
+            loginData: data
+          });
+        }
+        else {
 
-    try {
-      const response = await axios.post('https://gerenc-insta-deld.onrender.com/api/connection/sendConnectionUrl', {
-        connectionUrl: connectionUrl, userId: user._id
-      });
-      const refreshToken = jwt.sign({ id: user.id }, 'refresh-secret', { expiresIn: '7d' })
+          console.error('Erro ao enviar a url de conexão:', error);
+          return res.status(400).json({ message: 'Erro ao enviar a url de conexão:', error: error.message });
+        }
 
-      const responseData = {
-        _id: user._id,
-        username: req.body.username,
-        userImage: user.userImage,
-        instaAccounts: user.instaAccounts
-      }
-
-      console.log(user, responseData);
-
-      sessionUserId = user._id;
-      console.log('Resposta do servidor localhost 5500:', response.data);
-
-      return res.status(200).json({
-        message: 'Conexão bem-sucedida ao APP',
-        user: responseData,
-        accessToken: acessToken,
-        refreshToken: refreshToken
-      });
-
-    } catch (error) {
-
-      console.error('Erro ao se conectar com o servidor localhost 5500:', error);
-      return res.status(500).json({ message: 'Erro ao tentar se conectar ao servidor local', error: error.message });
     }
+    else {
+      
+      console.error('Erro no login:');
+      return res.status(400).json({ message: 'Erro no login!' });
+    }
+  }
+  catch (error) {
+
+    console.error('Erro no login:', error);
+    return res.status(500).json({ message: 'Erro no login!' });
   }
 }
 

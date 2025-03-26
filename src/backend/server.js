@@ -7,13 +7,12 @@ const axios = require('axios');
 const { getuserId  } = require('./controllers/authController');
 
 const app = express();
-const PORT = 6890;
+const PORT = 7890;
 
 require('dotenv').config();
 
 mongoose.connect
 ("mongodb+srv://gabrileao38:Gaga2001Gaga@cluster0.d0dpg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-  useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
   
@@ -33,7 +32,6 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
-
 
 
 process.on("SIGINT", async () => {
@@ -84,9 +82,6 @@ app.get('/', async (req, res) => {
     message: "OK"
   })
 });
-
-
-
 
 app.listen(PORT, () => {
 
