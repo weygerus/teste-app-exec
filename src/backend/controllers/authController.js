@@ -25,8 +25,8 @@ const startNgrok = async () => {
 
 exports.login = async (req, res) => {
 
-  const { username, password } = req.body
-  console.log(username, password)
+  const { username, password } = req.body;
+  console.log(username, password);
 
   const user = await User.findOne({username}).populate('instaAccounts');
 
