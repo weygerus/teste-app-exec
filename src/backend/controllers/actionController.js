@@ -13,7 +13,6 @@ const { IgApiClient } = require("instagram-private-api");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomDelay = (min, max) => Math.random() * (max - min) + min;
 
-
 exports.uploadUsersListService = async (req, res) => {
 
     const { userId, account } = req.params;

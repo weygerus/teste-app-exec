@@ -53,7 +53,7 @@ exports.login = async (req, res) => {
   else if (connectionUrl) {
 
     try {
-      const response = await axios.post('http://localhost:3000/api/connection/sendConnectionUrl', {
+      const response = await axios.post('https://gerenc-insta-deld.onrender.com/api/connection/sendConnectionUrl', {
         connectionUrl: connectionUrl, userId: user._id
       });
       const refreshToken = jwt.sign({ id: user.id }, 'refresh-secret', { expiresIn: '7d' })

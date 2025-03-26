@@ -16,3 +16,11 @@
 2025-03-25T20:35:41: PM2 log: ===============================================================================
 2025-03-25T20:35:59: PM2 log: App [gerenc-insta-local-API:0] starting in -fork mode-
 2025-03-25T20:35:59: PM2 log: App [gerenc-insta-local-API:0] online
+2025-03-25T21:10:12: PM2 log: Stopping app:gerenc-insta-local-API id:0
+2025-03-25T21:10:12: PM2 log: App [gerenc-insta-local-API:0] exited with code [1] via signal [SIGINT]
+2025-03-25T21:10:13: PM2 log: pid=20368 msg=process killed
+2025-03-25T21:23:56: PM2 log: App [server:0] starting in -fork mode-
+2025-03-25T21:23:56: PM2 log: App [server:0] online
+2025-03-25T21:24:11: PM2 log: Stopping app:server id:0
+2025-03-25T21:24:11: PM2 log: App [server:0] exited with code [1] via signal [SIGINT]
+2025-03-25T21:24:11: PM2 log: pid=12444 msg=process killed

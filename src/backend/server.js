@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 
 const axios = require('axios');
-const {  getuserId } = require('./controllers/authController');
+const { getuserId  } = require('./controllers/authController');
 
 const app = express();
 const PORT = 6890;
@@ -53,7 +53,7 @@ async function handleDisconnect() {
 
     const userId = await getuserId();
 
-    const response = await axios.post(`http://localhost:3000/api/connection/deleteConnectionUrl/${userId}`, {
+    const response = await axios.post(`https://gerenc-insta-deld.onrender.com/api/connection/deleteConnectionUrl/${userId}`, {
       mensagem: "Servidor desconectado",
     });
 
