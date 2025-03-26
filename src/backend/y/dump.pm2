@@ -110,7 +110,7 @@
       "ZES_ENABLE_SYSMAN": "1",
       "__PSLockDownPolicy": "0",
       "gerenc-insta-local-API": {},
-      "unique_id": "7c600262-50d2-40e7-b936-112564651102"
+      "unique_id": "7fa53c4d-e18d-4628-9a56-f9176f579438"
     },
     "namespace": "default",
     "filter_env": [],
@@ -222,9 +222,9 @@
     "windir": "C:\\WINDOWS",
     "ZES_ENABLE_SYSMAN": "1",
     "__PSLockDownPolicy": "0",
-    "unique_id": "7c600262-50d2-40e7-b936-112564651102",
+    "unique_id": "7fa53c4d-e18d-4628-9a56-f9176f579438",
     "status": "online",
-    "pm_uptime": 1742950743067,
+    "pm_uptime": 1742952321097,
     "axm_actions": [
       {
         "action_name": "km:heapdump",
@@ -279,7 +279,7 @@
       "module_version": "5.4.3"
     },
     "axm_dynamic": {},
-    "created_at": 1742950743067,
+    "created_at": 1742952321097,
     "restart_time": 0,
     "unstable_restarts": 0,
     "version": "1.0.0",

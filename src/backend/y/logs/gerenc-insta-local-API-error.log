@@ -3952,3 +3952,254 @@ Erro ao se conectar com o servidor localhost 5500: AxiosError: Request failed wi
   },
   status: 404
 }
+Erro ao iniciar o ngrok: NgrokClientError: failed to start tunnel
+    at NgrokClient.request (C:\dev\teste-app-exec\node_modules\ngrok\src\client.js:34:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async connectRetry (C:\dev\teste-app-exec\node_modules\ngrok\index.js:44:22)
+    at async startNgrok (C:\dev\teste-app-exec\src\backend\controllers\authController.js:17:17)
+    at async exports.login (C:\dev\teste-app-exec\src\backend\controllers\authController.js:47:25) {
+  response: <ref *1> IncomingMessage {
+    _events: {
+      close: undefined,
+      error: [Function],
+      data: undefined,
+      end: [Function: responseOnEnd],
+      readable: [Function (anonymous)],
+      aborted: [Array]
+    },
+    _readableState: ReadableState {
+      highWaterMark: 16384,
+      buffer: [],
+      bufferIndex: 0,
+      length: 0,
+      pipes: [],
+      awaitDrainWriters: null,
+      [Symbol(kState)]: 9996156
+    },
+    _maxListeners: undefined,
+    socket: null,
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'Content-Type',
+      'application/json',
+      'Date',
+      'Wed, 26 Mar 2025 01:17:45 GMT',
+      'Content-Length',
+      '365'
+    ],
+    rawTrailers: [],
+    joinDuplicateHeaders: undefined,
+    aborted: false,
+    upgrade: false,
+    url: 'http://127.0.0.1:4040/api/tunnels',
+    method: null,
+    statusCode: 502,
+    statusMessage: 'Bad Gateway',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _eventsCount: 6,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      _peername: [Object],
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 1122035,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 4362,
+        [Symbol(triggerId)]: 4360
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _consuming: true,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '74',
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [Socket],
+      _header: 'POST /api/tunnels HTTP/1.1\r\n' +
+        'user-agent: got (https://github.com/sindresorhus/got)\r\n' +
+        'content-type: application/json\r\n' +
+        'accept: application/json\r\n' +
+        'content-length: 74\r\n' +
+        'accept-encoding: gzip, deflate, br\r\n' +
+        'Host: 127.0.0.1:4040\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/tunnels',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      timings: [Object],
+      emit: [Function (anonymous)],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null,
+      [Symbol(reentry)]: true
+    },
+    _eventsCount: 4,
+    timings: {
+      start: 1742951865073,
+      socket: 1742951865074,
+      lookup: 1742951865075,
+      connect: 1742951865075,
+      secureConnect: undefined,
+      upload: 1742951865075,
+      response: 1742951865136,
+      end: 1742951865137,
+      error: undefined,
+      abort: undefined,
+      phases: [Object]
+    },
+    emit: [Function (anonymous)],
+    requestUrl: 'http://127.0.0.1:4040/api/tunnels',
+    redirectUrls: [],
+    request: Request {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: true,
+      _maxListeners: undefined,
+      requestInitialized: true,
+      redirects: [],
+      retryCount: 0,
+      _progressCallbacks: [],
+      _eventsCount: 10,
+      write: [Function: onLockedWrite],
+      end: [Function: onLockedWrite],
+      options: [Object],
+      requestUrl: 'http://127.0.0.1:4040/api/tunnels',
+      _cannotHaveBody: false,
+      _noPipe: true,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(downloadedSize)]: 365,
+      [Symbol(uploadedSize)]: 74,
+      [Symbol(serverResponsesPiped)]: Set(0) {},
+      [Symbol(stopReading)]: true,
+      [Symbol(triggerRead)]: false,
+      [Symbol(jobs)]: [],
+      [Symbol(body)]: '{"addr":6890,"proto":"http","name":"a50141dd-9986-435f-9e1b-838f74390fd8"}',
+      [Symbol(bodySize)]: 74,
+      [Symbol(cancelTimeouts)]: [Function: cancelTimeouts],
+      [Symbol(unproxyEvents)]: [Function (anonymous)],
+      [Symbol(request)]: [ClientRequest],
+      [Symbol(originalResponse)]: [Circular *1],
+      [Symbol(isFromCache)]: false,
+      [Symbol(responseSize)]: 365,
+      [Symbol(response)]: [Circular *1],
+      [Symbol(startedReading)]: true
+    },
+    isFromCache: false,
+    ip: '127.0.0.1',
+    retryCount: 0,
+    rawBody: <Buffer 7b 22 65 72 72 6f 72 5f 63 6f 64 65 22 3a 31 30 33 2c 22 73 74 61 74 75 73 5f 63 6f 64 65 22 3a 35 30 32 2c 22 6d 73 67 22 3a 22 66 61 69 6c 65 64 20 ... 315 more bytes>,
+    body: '{"error_code":103,"status_code":502,"msg":"failed to start tunnel","details":{"err":"failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\\nThe tunnels already running on this session are:\\ntn_2upg6CnkOhuIPsHTTst3o0QJ4oL, tn_2upgMFS2sjCjdzZCiXpLS6FRtXP, tn_2uphQ7kWxaQ7JtVnCVcGFColDFk\\n\\r\\n\\r\\nERR_NGROK_324\\r\\n"}}\n',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'content-type': 'application/json',
+      date: 'Wed, 26 Mar 2025 01:17:45 GMT',
+      'content-length': '365'
+    },
+    [Symbol(kHeadersCount)]: 6,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0
+  },
+  body: {
+    error_code: 103,
+    status_code: 502,
+    msg: 'failed to start tunnel',
+    details: {
+      err: 'failed to start tunnel: Your account may not run more than 3 tunnels over a single ngrok agent session.\n' +
+        'The tunnels already running on this session are:\n' +
+        'tn_2upg6CnkOhuIPsHTTst3o0QJ4oL, tn_2upgMFS2sjCjdzZCiXpLS6FRtXP, tn_2uphQ7kWxaQ7JtVnCVcGFColDFk\n' +
+        '\r\n' +
+        '\r\n' +
+        'ERR_NGROK_324\r\n'
+    }
+  }
+}
+(node:26900) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26900) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
