@@ -166,7 +166,9 @@ async function loadSessions() {
     const activeList = document.getElementById("active-list");
     const errorList = document.getElementById("error-list");
 
+    
     const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user)
     const userId = user._id;
 
     const token = localStorage.getItem("accessToken");

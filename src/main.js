@@ -17,7 +17,7 @@ function startLocalAPI() {
       const serverPath = path.join(process.resourcesPath, 'backend', 'server.js')
 
       pm2.start({
-        script: serverPath,
+        script: 'C:\\dev\\teste-app-exec\\src\\backend\\server.js',
         name: 'local-instagram-api',
         watch: false,
         env: {
