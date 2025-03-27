@@ -21,7 +21,8 @@
     "ngrok": "^5.0.0-beta.2",
     "node-ssh": "^13.2.1",
     "nodemon": "^3.1.9",
-    "pm2": "^6.0.5"
+    "pm2": "^6.0.5",
+    "pm2-axon-rpc": "^0.7.1"
   },
   "devDependencies": {
     "electron": "^35.0.2",

@@ -46,7 +46,7 @@ document.getElementById('registerPopupSubmmitButton').addEventListener('click', 
 
         try {
 
-            const response = await fetch('http://localhost:6890/api/instaAuth/addInstaAccount', {
+            const response = await fetch('http://localhost:7890/api/instaAuth/addInstaAccount', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -355,7 +355,7 @@ async function confirmDeleteAccount(username) {
 
     try {
 
-        const response = await fetch(`http://localhost:6890/api/instaAuth/deleteAccount/${userId}/${username}`, {
+        const response = await fetch(`http://localhost:7890/api/instaAuth/deleteAccount/${userId}/${username}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
