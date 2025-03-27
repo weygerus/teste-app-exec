@@ -1,66 +1,81 @@
-const { app, BrowserWindow } = require('electron');
-const fs = require('fs');
-const path = require('path');
-var { exec } = require('child_process');
+const { app, BrowserWindow } = require('electron')
+const path = require('path')
+const pm2 = require('pm2')
 
-let win;
+// Função para iniciar API local com PM2
+async function startLocalAPI() {
+  return new Promise((resolve, reject) => {
+    pm2.connect((err) => {
+      if (err) {
+        console.error('Erro ao conectar PM2:', err)
+        return reject(err)
+      }
 
-async function verifyPm2Process() {
-    
-     exec('pm2 list > C:\\dev\\teste-app-exec\\src\\frontend\\pm2Logs\\process-verificationDEV.txt', { encoding: 'utf8' }, (err, stdout, stderr) => {
-        if (err) {
-            console.error('Erro ao executar o comando:', err);
-            return "ERRO NO PROCESSO";
+      pm2.start({
+        script: path.join(__dirname, 'backend/server.js'),
+        name: 'local-instagram-api',
+        autorestart: true,
+        watch: false,
+        max_memory_restart: '100M',
+        env: {
+          NODE_ENV: 'production'
         }
-    });
-
-            let message = ""
-                const logPath = "C:\\dev\\teste-app-exec\\src\\frontend\\pm2Logs\\process-verificationDEV.txt";
-                const processName = "gerenc-insta-local-API-DEV";
+      }, (err) => {
+        if (err) {
+          console.error('Erro ao iniciar API:', err)
+          pm2.disconnect()
+          return reject(err)
+        }
         
-                fs.readFile(logPath, async (err, data) => {
-                    if (err) {
-                        console.error('Erro ao ler o arquivo:', err);
-                        return "ERRO";
-                    }
-        
-                    if (data.includes(processName)) {
-        
-                        message = "Processo ativo!"
-                        return true;
-
-                    } else {
-
-                        console.log(`Processo não encontrado!`);
-                        console.log("Criando proesso...")        
-
-                        exec('cd C:\\dev\\teste-app-exec\\src\\backend && nodemon server.js', { encoding: 'utf8' }, (err, stdout, stderr) => {
-                            if (err) {
-                                console.error('Erro ao criar o processo: ', err);
-                                return `Erro ao criar o processo: ${err}`;
-                            }
-                            console.log("Proesso criado com sucesso!")
-                            return "Proesso criado com sucesso!";
-                        });
-                    }   
-                });
-
+        console.log('API local iniciada')
+        pm2.disconnect()
+        resolve()
+      })
+    })
+  })
 }
 
 app.whenReady().then(async () => {
+  try {
+    // Inicia a API local antes de criar a janela
+    await startLocalAPI()
 
-    
-    //await verifyPm2Process();
-
-    win = new BrowserWindow({
-        width: 500,
-        height: 550,
-        autoHideMenuBar: true,
-        webPreferences: {
-            nodeIntegration: true
-        },
-        icon: path.join(__dirname, 'assets/icon.png')
+    // Cria a janela após iniciar a API
+    const win = new BrowserWindow({
+      width: 500,
+      height: 550,
+      autoHideMenuBar: true,
+      webPreferences: {
+        nodeIntegration: true
+      },
+      icon: path.join(__dirname, 'assets/icon.png')
     });
 
     win.loadFile(path.join(__dirname, 'frontend/views/login.html'));
-});
+
+  } catch (error) {
+    console.error('Erro na inicialização:', error)
+    app.quit()
+  }
+})
+
+// Garantir encerramento da API ao fechar o app
+app.on('will-quit', (event) => {
+  event.preventDefault()
+  
+  pm2.connect((err) => {
+    if (err) {
+      console.error('Erro ao conectar PM2 para encerramento:', err)
+      app.quit()
+      return
+    }
+
+    pm2.delete('local-instagram-api', (err) => {
+      if (err) {
+        console.error('Erro ao encerrar API:', err)
+      }
+      pm2.disconnect()
+      app.quit()
+    })
+  })
+})

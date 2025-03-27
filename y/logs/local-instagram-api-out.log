@@ -1,0 +1,554 @@
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+MULTERMIDIA
+Servidor rodando na porta 7890
+Conectado ao MongoDB!
+MULTERMIDIA
+Servidor rodando na porta 7890
+Conectado ao MongoDB!
+MULTERMIDIA
+Servidor rodando na porta 7890
+Conectado ao MongoDB!
+ok
+ok gagaProd 12345
+{
+  status: 200,
+  statusText: 'OK',
+  headers: Object [AxiosHeaders] {
+    date: 'Thu, 27 Mar 2025 00:06:40 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '477',
+    connection: 'keep-alive',
+    'access-control-allow-headers': 'Content-Type, Authorization',
+    'access-control-allow-methods': 'GET, POST, PUT, DELETE',
+    'access-control-allow-origin': '*',
+    etag: 'W/"319-tD6nmIJ/AiD/7qPlY5nxT9oJV50"',
+    'rndr-id': '7dae0396-7d28-4f62',
+    vary: 'Accept-Encoding',
+    'x-powered-by': 'Express',
+    'x-render-origin-server': 'Render',
+    'cf-cache-status': 'DYNAMIC',
+    server: 'cloudflare',
+    'cf-ray': '926aa4a36f3ba4b7-GRU',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.8.3',
+      'Content-Length': '42',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'https://gerenc-insta-deld.onrender.com/api/auth/login',
+    data: '{"username":"gagaProd","password":"12345"}',
+    allowAbsoluteUrls: true
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: '42',
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'gerenc-insta-deld.onrender.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'gerenc-insta-deld.onrender.com',
+      _closeAfterHandlingError: false,
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      autoSelectFamilyAttemptedAddresses: [Array],
+      [Symbol(alpncallback)]: null,
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 29982,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 301,
+        [Symbol(triggerId)]: 299
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object]
+    },
+    _header: 'POST /api/auth/login HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.8.3\r\n' +
+      'Content-Length: 42\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: gerenc-insta-deld.onrender.com\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 443,
+      protocol: 'https:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      maxCachedSessions: 100,
+      _sessionCache: [Object],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/api/auth/login',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 200,
+      statusMessage: 'OK',
+      client: [TLSSocket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'https://gerenc-insta-deld.onrender.com/api/auth/login',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 34,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'gerenc-insta-deld.onrender.com',
+    protocol: 'https:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 42,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'https://gerenc-insta-deld.onrender.com/api/auth/login',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  data: {
+    message: 'Usuário autenticado com sucesso!',
+    accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGQ0YzYyYTQzZDYyMGNlZDg5ODQ0YSIsInJvbGUiOjEsImlhdCI6MTc0MzAzNDAwMCwiZXhwIjoxNzQzNjM4ODAwfQ.-VXr9hNmHQWR5Ka1L1LFecKGYHdsTH7_1FymNjwayEE',
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGQ0YzYyYTQzZDYyMGNlZDg5ODQ0YSIsImlhdCI6MTc0MzAzNDAwMCwiZXhwIjoxNzQzNjM4ODAwfQ.ZsofBSoP4nYFttS66-Vcaw9DROWbw-LylySgoZzTp1M',
+    user: {
+      _id: '67dd4c62a43d620ced89844a',
+      username: 'gagaProd',
+      instaAccounts: [Array]
+    }
+  }
+}
+okkk gagaProd 12345
+ngrok túnel aberto em: https://cc44-2804-90-6400-81f4-780d-669e-775c-c36.ngrok-free.app
+connectionUrl: https://cc44-2804-90-6400-81f4-780d-669e-775c-c36.ngrok-free.app 67dd4c62a43d620ced89844a
+result: Conexão bem-sucedida ao APP
+Sessão carregada para o usuário gabrileoni
+Usuários divididos em 1 lotes de até 2 usuários.
+usernames [ 'zebpowelll' ]
+Processando lote...
+TESTESESSION, linha 19:  zebpowelll
+Seguindo usuário zebpowelll (ID: 336252472) - Resposta: [Object: null prototype] {
+  blocking: false,
+  followed_by: false,
+  following: true,
+  incoming_request: false,
+  is_bestie: false,
+  is_eligible_to_subscribe: false,
+  is_feed_favorite: false,
+  is_restricted: false,
+  outgoing_request: false,
+  subscribed: false,
+  is_private: false,
+  muting: false
+}
+Todos os lotes foram processados com sucesso.
+Sessão carregada para o usuário gabrileoni
+Usuários divididos em 1 lotes de até 2 usuários.
+usernames [ 'zebpowelll' ]
+Processando lote...
+TESTESESSION, linha 19:  zebpowelll
+Seguindo usuário zebpowelll (ID: 336252472) - Resposta: [Object: null prototype] {
+  blocking: false,
+  followed_by: false,
+  following: true,
+  incoming_request: false,
+  is_bestie: false,
+  is_eligible_to_subscribe: false,
+  is_feed_favorite: false,
+  is_restricted: false,
+  outgoing_request: false,
+  subscribed: false,
+  is_private: false,
+  muting: false
+}
+Todos os lotes foram processados com sucesso.
+Sessão carregada para o usuário gabrileoni
+Usuários divididos em 1 lotes de até 2 usuários.
+usernames [ 'zebpowelll' ]
+Processando lote...
+TESTESESSION, linha 19:  zebpowelll
+Seguindo usuário zebpowelll (ID: 336252472) - Resposta: [Object: null prototype] {
+  blocking: false,
+  followed_by: false,
+  following: true,
+  incoming_request: false,
+  is_bestie: false,
+  is_eligible_to_subscribe: false,
+  is_feed_favorite: false,
+  is_restricted: false,
+  outgoing_request: false,
+  subscribed: false,
+  is_private: false,
+  muting: false
+}
+Todos os lotes foram processados com sucesso.
+Sessão carregada para o usuário gabrileoni
+Usuários divididos em 1 lotes de até 2 usuários.
+usernames [ 'zebpowelll' ]
+Processando lote...
+TESTESESSION, linha 19:  zebpowelll
+Seguindo usuário zebpowelll (ID: 336252472) - Resposta: [Object: null prototype] {
+  blocking: false,
+  followed_by: false,
+  following: true,
+  incoming_request: false,
+  is_bestie: false,
+  is_eligible_to_subscribe: false,
+  is_feed_favorite: false,
+  is_restricted: false,
+  outgoing_request: false,
+  subscribed: false,
+  is_private: false,
+  muting: false
+}
+Todos os lotes foram processados com sucesso.
