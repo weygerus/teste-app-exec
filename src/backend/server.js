@@ -31,8 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
+/*
 async function handleDisconnect() {
   try {
 
@@ -49,6 +48,7 @@ async function handleDisconnect() {
     console.error("Erro ao processar desconexão:", error);
   }
 }
+*/ 
 
 const instaAuthRoutes = require('./routes/instaAuthRoutes');
 app.use('/api/instaAuth', instaAuthRoutes);
