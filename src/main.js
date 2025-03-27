@@ -3,8 +3,9 @@ const path = require('path')
 const pm2 = require('pm2')
 
 // Função para iniciar API local com PM2
-async function startLocalAPI() {
+function startLocalAPI() {
   return new Promise((resolve, reject) => {
+
     pm2.connect((err) => {
       if (err) {
         console.error('Erro ao conectar PM2:', err)
