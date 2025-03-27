@@ -32,17 +32,6 @@ app.use((req, res, next) => {
 });
 
 
-process.on("SIGINT", async () => {
-  await handleDisconnect();
-  process.exit(0);
-});
-
-process.on("SIGTERM", async () => {
-  await handleDisconnect();
-  process.exit(0);
-});
-
-
 
 async function handleDisconnect() {
   try {
