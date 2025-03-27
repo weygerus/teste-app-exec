@@ -35,8 +35,6 @@ function startLocalAPI() {
       })
     })
   })
-
-
 }
 
 app.whenReady().then(async () => {
