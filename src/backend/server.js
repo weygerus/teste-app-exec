@@ -12,9 +12,7 @@ const PORT = 7890;
 require('dotenv').config();
 
 mongoose.connect
-("mongodb+srv://gabrileao38:Gaga2001Gaga@cluster0.d0dpg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-  useUnifiedTopology: true
-}).then(() => {
+("mongodb+srv://gabrileao38:Gaga2001Gaga@cluster0.d0dpg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() => {
   
   console.log('Conectado ao MongoDB!')   
 })
