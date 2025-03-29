@@ -2,7 +2,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 const { IgApiClient } = require('instagram-private-api');
-const { loadSessionFromDB } = require("../backend/utils/sessionManager");
 
 require('../models/usuario')
 const User = mongoose.model('User')
