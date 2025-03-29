@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose')
 
+const axios = require('axios');
+const { getuserId  } = require('./controllers/authController');
+
 const app = express();
 const PORT = 7890;
 
@@ -28,11 +31,6 @@ app.use((req, res, next) => {
 });
 
 
-/*
-
-const axios = require('axios');
-const { getuserId  } = require('./controllers/authController');
-
 const instaAuthRoutes = require('./routes/instaAuthRoutes');
 app.use('/api/instaAuth', instaAuthRoutes);
 
@@ -41,9 +39,6 @@ app.use('/api/auth', authRoutes);
 
 const actionRoutes = require('./routes/actionRoutes');
 app.use('/api/action', actionRoutes);
-
-*/
-
 
 app.get('/', async (req, res) => {
 
@@ -54,10 +49,12 @@ app.get('/', async (req, res) => {
   })
 });
 
-function startAPI() {
+function startLocalAPI() {
     
     app.listen(PORT, () => {
     
       console.log(`Servidor rodando na porta ${PORT}`);
     });
 }
+
+module.exports = { startLocalAPI }

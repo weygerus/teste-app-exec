@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-require('../models/usuario')
+require('../../models/usuario')
 const User = mongoose.model('User')
 
 const loadSessionFromDB = async (userId, username, ig) => {

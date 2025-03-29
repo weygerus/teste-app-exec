@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 
 const axios = require('axios');
-const { getuserId  } = require('./controllers/authController');
+const { getuserId  } = require('../controllers/authController');
 
 const app = express();
 const PORT = 7890;

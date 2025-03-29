@@ -20,6 +20,20 @@
         <input type="password" id="password" class="custom_login_form_input" placeholder="Senha" >
         <button id="loginBtn" class="button button-primary">Entrar</button>
     </div>
-    <script src="../renderer.js"></script>
+
+    <script>
+
+
+
+document.getElementById('loginBtn').addEventListener('click', () => {
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    window.api.send('login', { username, password });
+  });
+
+
+    </script>
 </body>
 </html>
