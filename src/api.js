@@ -30,7 +30,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 const instaAuthRoutes = require('./routes/instaAuthRoutes');
 app.use('/api/instaAuth', instaAuthRoutes);
 

@@ -1,34 +1,22 @@
 const { app, ipcMain, BrowserWindow } = require('electron')
-const fetch = require('node-fetch'); 
+const fetch = require('node-fetch');
 const path = require('path')
 const pm2 = require('pm2')
 
+let window;
 const { startLocalAPI } = require('./api');
 
+function loadHomepage() {
 
-
-  function loadHomepage() {
-  
-    const mainWin = new BrowserWindow({
-      width: 800,
-      height: 600,
-      autoHideMenuBar: true,
-      webPreferences: {
-        preload: path.join(__dirname, 'preload.js'),
-        contextIsolation: true,
-      },
-      icon: path.join(__dirname, 'assets/icon.png'),
-    });
-  
-    mainWin.loadFile(path.join(__dirname, 'frontend/views/main.html'));
-  }
+  window.loadFile(path.join(__dirname, 'views/main.html'));
+}
 
 app.whenReady().then(async () => {
   try {
 
     await startLocalAPI();
 
-    const win = new BrowserWindow({
+    window = new BrowserWindow({
       width: 500,
       height: 550,
       autoHideMenuBar: true,
@@ -71,7 +59,7 @@ app.whenReady().then(async () => {
     });
 
 
-    win.loadFile(path.join(__dirname, 'views/login.html'));
+    window.loadFile(path.join(__dirname, 'views/login.html'));
 
   } catch (error) {
     console.error('Erro na inicialização:', error)
