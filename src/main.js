@@ -57,7 +57,6 @@ app.whenReady().then(async () => {
       }
     });
 
-
     window.loadFile(path.join(__dirname, 'views/login.html'));
 
   } catch (error) {
