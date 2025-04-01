@@ -1,7 +1,6 @@
 const { app, ipcMain, BrowserWindow } = require('electron')
 const fetch = require('node-fetch');
 const path = require('path')
-const pm2 = require('pm2')
 
 let window;
 const { startLocalAPI } = require('./api');
