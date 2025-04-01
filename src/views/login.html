@@ -29,12 +29,9 @@
 
         document.getElementById('loginBtn').addEventListener('click', () => {
 
-            /*
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-            */
-            const username = "gagaProd"
-            const password = "12345"
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
             window.api.send('login', { username, password });
         });
