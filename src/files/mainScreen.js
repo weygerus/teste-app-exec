@@ -29,7 +29,7 @@ document.getElementById("menuButton").addEventListener("click", async (event) =>
 
     const menuPopup = document.getElementById("menuPopup");
 
-    if(menuPopup.className.includes("hidden")) {
+    if (menuPopup.className.includes("hidden")) {
 
         menuPopup.classList.remove("hidden");
     }
@@ -42,17 +42,56 @@ document.getElementById("menuButton").addEventListener("click", async (event) =>
     usernametitle.innerText = `${user.username}`;
 
     const logoutBtn = document.getElementById("logoutBtn");
-    logoutBtn.addEventListener("click", async () => { await asyncLogout()})
+    logoutBtn.addEventListener("click", async () => { await asyncLogout() })
 
     const mainNav = document.getElementById("mainNav");
     mainNav.classList.add("openPopup");
 
 });
 
+window.api.receive('render-card', (data) => {
+
+    displayConfirmDisconnectCard();
+});
+
+function displayConfirmDisconnectCard() {
+
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("createActionContainer");
+
+    const cardHtml = `
+    
+    <div class="deleteAccountConfirmCard fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 shadow-lg text-center w-auto relative">
+    
+    <h2>Deseja desconectar?</h2>
+    
+    <div class="btns_confirmdeleteAccount_container">
+    
+        <button class="deleteAccountCancelButton btnAdjust text-gray-700 bg-gray-300 hover:bg-gray-400" onclick="canceldeleteAccount()">
+            Cancelar
+        </button>
+        <button class="deleteAccountConfirmBtn" onclick="confirmDisconnect()">
+            Sair
+        </button>
+    </div>
+    </div>
+    </div>
+    `
+
+    cardContainer.innerHTML = cardHtml;
+    document.body.appendChild(cardContainer);
+}
+
+function confirmDisconnect() {
+
+    window.api.send('execute-logout');
+}
+
 async function asyncLogout() {
-    
+
     const cardContainer = document.getElementById("createCardContainer");
-    
+
     const cardHtml = `
     
         <div class="deleteAccountConfirmCard  fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
@@ -72,78 +111,64 @@ async function asyncLogout() {
             </div>
         </div>
         `
-    
-        cardContainer.innerHTML = cardHtml;
 
-        document.getElementById("confirmLogout").addEventListener("click", async (event) => {
-        
-            event.preventDefault();
-        
-            try {
-                
-                console.log("OKKKKKK")
-                const accessToken = localStorage.getItem("accessToken");
-        
-                const response = await fetch("https://gerenc-insta-deld.onrender.com/api/auth/logout", {
-                    method: "POST",
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${accessToken}`
-                    },
-                },);
-        
-                const data = await response.json();
-                console.log("Resposta: ", data);
-        
-                if (response.ok) {
-        
-                    await removeLocalStorageItems();
-                    await clearCookies();
-        
-                    console.log("Logout completo, redirecionando...")
-               
-                } else {
-        
-                    console.error("Erro ao realizar logout.");
-                }
-            } catch (error) {
-        
-                console.error("Erro ao tentar fazer logout:", error);
+    cardContainer.innerHTML = cardHtml;
+
+    document.getElementById("confirmLogout").addEventListener("click", async (event) => {
+
+        event.preventDefault();
+
+        try {
+
+            const accessToken = localStorage.getItem("accessToken");
+
+            const response = await fetch("https://gerenc-insta-deld.onrender.com/api/auth/logout", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
+                },
+            },);
+
+            const data = await response.json();
+            console.log("Resposta: ", data);
+
+            if (response.ok) {
+
+                await removeLocalStorageItems();
+                await clearCookies();
+
+                console.log("Logout completo, redirecionando...")
+
+            } else {
+
+                console.error("Erro ao realizar logout.");
             }
-        });
+        } catch (error) {
+
+            console.error("Erro ao tentar fazer logout:", error);
+        }
+    });
 
 }
 
 
-        async function removeLocalStorageItems() {
+async function removeLocalStorageItems() {
 
-            localStorage.removeItem("instaAuth");
-            localStorage.removeItem("data");
-            localStorage.removeItem("user");
-            localStorage.removeItem("accessToken");
-            localStorage.removeItem("refreshToken");
-            localStorage.removeItem("secondaryAccounts");
-            localStorage.removeItem("sholudVerifyAction");
-            localStorage.removeItem("logLevel");
-            localStorage.removeItem("instaAccounts");
-            localStorage.removeItem("instaLoginErrors");
-            localStorage.removeItem("actionForAccounts");
-            localStorage.removeItem("connectionUrl");
-        
-            console.log('items removidos');
-        }
-        
-        async function clearCookies() {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].split('=');
-                const cookieName = cookie[0].trim();
-        
-                document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-                console.log('1 cookie limpo', cookieName);
-            }
-        }
-        
+    console.log('items removidos');
+}
+
+async function clearCookies() {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].split('=');
+        const cookieName = cookie[0].trim();
+
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        console.log('1 cookie limpo', cookieName);
+    }
+}
+
 
 
 document.getElementById("button-add-account").addEventListener("click", () => togglePopup(true));

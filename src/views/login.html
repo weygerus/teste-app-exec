@@ -26,11 +26,18 @@
     <script>
 
 
-        for (let i = 0; i < localStorage.length; i++) {
-            let key = localStorage.key(i);
-            let value = localStorage.getItem(key);
-            console.log(`${key}: ${value}`);
-        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                let value = localStorage.getItem(key);
+                console.log(`${key}: ${value}`);
+            }
+
+            const user = localStorage.getItem("user");
+            console.log("USER --> ",JSON.parse(user));
+        })
 
 
         document.getElementById("loginBtn").addEventListener("click", async (event) => {
@@ -39,7 +46,7 @@
 
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
-
+            
             try {
                 const response = await fetch("http://localhost:7890/api/auth/login", {
                     method: "POST",
@@ -54,17 +61,8 @@
 
                 if (response.ok) {
 
-                    // Salva o access token e refresh token
                     localStorage.setItem("accessToken", data.loginData.accessToken);
-                    localStorage.setItem("refreshToken", data.loginData.refreshToken);
-                    localStorage.setItem("instaAuth", "false");
-
-                    // Armazena dados do usuário
                     localStorage.setItem("user", JSON.stringify(data.loginData.user));
-
-                    const user = JSON.parse(localStorage.getItem("user"));
-                    const token = localStorage.getItem("refreshToken")
-                    console.log(user, "TOKEN: ", token)
 
                     window.location.href = 'main.html'
                 } else {
@@ -80,7 +78,7 @@
         });
 
 
-        
+
 
     </script>
 </body>

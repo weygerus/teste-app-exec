@@ -34,8 +34,27 @@ app.whenReady().then(async () => {
       icon: path.join(__dirname, 'assets/icon.png')
     });
 
-
     window.loadFile(path.join(__dirname, 'views/login.html'));
+    
+    window.on('close', (e) => {
+      
+      e.preventDefault();
+
+      window.webContents.send('render-card', {
+        mensagem: 'RenderizeCard'
+      });
+
+    });
+    
+    
+    ipcMain.once('execute-logout', () => {
+      window.loadFile(path.join(__dirname, 'views/logout.html'));
+    });
+  
+
+    ipcMain.once('logout-completo', () => {
+      window.destroy();
+    });
   } 
   catch (error) {
 

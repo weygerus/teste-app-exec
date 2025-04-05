@@ -22,6 +22,11 @@ const startNgrok = async () => {
   }
 }
 
+/*
+
+authtoken do pc do jean
+*/
+
 async function sendConnectionUrlToWebApi(connectionURL, userID) {
 
   const response = await axios.post('https://gerenc-insta-deld.onrender.com/api/connection/sendConnectionUrl', {
@@ -68,7 +73,7 @@ exports.login = async (req, res) => {
 
         return res.status(400).json({
 
-          message: "Houve um erro ao criar a iniciar a conexão local!"
+          message: `Erro ao criar a iniciar a conexão: ${connectionUrl.error}`
         });
       }
 
