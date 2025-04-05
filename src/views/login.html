@@ -62,9 +62,6 @@
                     // Armazena dados do usuário
                     localStorage.setItem("user", JSON.stringify(data.loginData.user));
 
-
-                    localStorage.removeItem("user");
-
                     const user = JSON.parse(localStorage.getItem("user"));
                     const token = localStorage.getItem("refreshToken")
                     console.log(user, "TOKEN: ", token)
