@@ -1,6 +1,11 @@
 const { app, ipcMain, BrowserWindow } = require('electron')
 const fetch = require('node-fetch');
-const path = require('path')
+const path = require('path');
+require('dotenv').config();
+
+let sessionUserId = "";
+
+
 
 let window;
 const { startLocalAPI } = require('./api');
@@ -9,6 +14,7 @@ function loadHomepage() {
 
   window.loadFile(path.join(__dirname, 'views/main.html'));
 }
+
 
 app.whenReady().then(async () => {
   try {
@@ -28,38 +34,11 @@ app.whenReady().then(async () => {
       icon: path.join(__dirname, 'assets/icon.png')
     });
 
-    ipcMain.on('login', async (event, { username, password }) => {
-
-      try {
-
-        const response = await fetch('http://localhost:7890/api/auth/login', {
-          method: "POST",
-          headers: {
-
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ username, password }),
-        });
-
-        const data = await response.json();
-        console.log(data);
-
-        event.reply('login-response', {
-          message: data.success ? 'Login bem-sucedido!' : 'Falha no login!',
-        });
-
-        await loadHomepage();
-      }
-      catch (error) {
-
-        console.error('Erro ao realizar login:', error);
-        event.reply('login-response', { message: 'Erro interno no servidor.' });
-      }
-    });
 
     window.loadFile(path.join(__dirname, 'views/login.html'));
+  } 
+  catch (error) {
 
-  } catch (error) {
     console.error('Erro na inicialização:', error)
     app.quit()
   }

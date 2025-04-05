@@ -5,7 +5,8 @@
   "scripts": {
     "start": "electron .",
     "server": "nodemon src/backend/server.js",
-    "build": "electron-builder"
+    "build": "electron-builder build --win",
+    "build:dir": "electron-builder build --win --dir"
   },
   "dependencies": {
     "axios": "^1.8.3",
@@ -32,7 +33,7 @@
   },
   "build": {
     "appId": "com.meuapp",
-    "productName": "Meu App",
+    "productName": "Gerenc-insta",
     "win": {
       "target": [
         "nsis"

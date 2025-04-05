@@ -18,7 +18,6 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-
     <style>
         body {
 
@@ -391,12 +390,86 @@
         top: 50%;
         left: 60%;
     }
+
+    .main_nav {
+
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .openPopup {
+
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .menu_li {
+
+        list-style: none;
+    }
+
+    .menuPopupdiv {
+
+        position: absolute;
+        top: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 130px;
+        height: 90px;
+        padding: 8px;
+
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .logoutConfirmCard {
+
+        width: 300px !important;
+    }
+    .menuPoppupUsernameTitleH2 {
+
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #191919;
+    }
+
+    .logout_link {
+
+        cursor: pointer;
+    }
 </style>
 
 <body class="bg-gray-100">
 
     <div class="container mx-auto p-6 max-w-2xl bg-white shadow-md rounded-lg">
 
+        <header class="main_header">
+
+            <nav class="main_nav" id="mainNav">
+
+                <li class="menu_li">
+
+                    <button id="menuButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </li>
+                <div class="menuPopupdiv hidden" id="menuPopup">
+
+                    <h2 class="menuPoppupUsernameTitleH2" id="menuPoppupUsernameTitle"></h2>
+
+                    <button class="logoutBtn"></button>
+                    <a id="logoutBtn" class="logout_link">Sair</a>
+                </div>
+            </nav>
+        </header>
         <!-- Abas -->
         <div class="tabs_container flex space-x-2 mb-4">
             <button class="active_sessions_tab tab-button active" data-tab="active-sessions"

@@ -20,8 +20,136 @@ async function togglePopup(show) {
     }
 }
 
+
+document.getElementById("menuButton").addEventListener("click", async (event) => {
+
+    event.preventDefault();
+
+    const user = JSON.parse(localStorage.getItem("user"))
+
+    const menuPopup = document.getElementById("menuPopup");
+
+    if(menuPopup.className.includes("hidden")) {
+
+        menuPopup.classList.remove("hidden");
+    }
+    else {
+
+        menuPopup.classList.add("hidden");
+    }
+
+    const usernametitle = document.getElementById("menuPoppupUsernameTitle");
+    usernametitle.innerText = `${user.username}`;
+
+    const logoutBtn = document.getElementById("logoutBtn");
+    logoutBtn.addEventListener("click", async () => { await asyncLogout()})
+
+    const mainNav = document.getElementById("mainNav");
+    mainNav.classList.add("openPopup");
+
+});
+
+async function asyncLogout() {
+    
+    const cardContainer = document.getElementById("createCardContainer");
+    
+    const cardHtml = `
+    
+        <div class="deleteAccountConfirmCard  fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+            <div class="logoutConfirmCard bg-white p-6 shadow-lg text-center w-auto relative">
+            
+                <h2>Desconectar?</h2>
+    
+                <div class="btns_confirmdeleteAccount_container">
+                
+                    <button class="deleteAccountCancelButton text-gray-700 bg-gray-300 hover:bg-gray-400" onclick="canceldeleteAccount()">
+                        Cancelar
+                    </button>
+                    <button class="deleteAccountConfirmBtn" id="confirmLogout">
+                        Sair
+                    </button>
+                </div>
+            </div>
+        </div>
+        `
+    
+        cardContainer.innerHTML = cardHtml;
+
+        document.getElementById("confirmLogout").addEventListener("click", async (event) => {
+        
+            event.preventDefault();
+        
+            try {
+                
+                console.log("OKKKKKK")
+                const accessToken = localStorage.getItem("accessToken");
+        
+                const response = await fetch("https://gerenc-insta-deld.onrender.com/api/auth/logout", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                },);
+        
+                const data = await response.json();
+                console.log("Resposta: ", data);
+        
+                if (response.ok) {
+        
+                    await removeLocalStorageItems();
+                    await clearCookies();
+        
+                    console.log("Logout completo, redirecionando...")
+               
+                } else {
+        
+                    console.error("Erro ao realizar logout.");
+                }
+            } catch (error) {
+        
+                console.error("Erro ao tentar fazer logout:", error);
+            }
+        });
+
+}
+
+
+        async function removeLocalStorageItems() {
+
+            localStorage.removeItem("instaAuth");
+            localStorage.removeItem("data");
+            localStorage.removeItem("user");
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("refreshToken");
+            localStorage.removeItem("secondaryAccounts");
+            localStorage.removeItem("sholudVerifyAction");
+            localStorage.removeItem("logLevel");
+            localStorage.removeItem("instaAccounts");
+            localStorage.removeItem("instaLoginErrors");
+            localStorage.removeItem("actionForAccounts");
+            localStorage.removeItem("connectionUrl");
+        
+            console.log('items removidos');
+        }
+        
+        async function clearCookies() {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].split('=');
+                const cookieName = cookie[0].trim();
+        
+                document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                console.log('1 cookie limpo', cookieName);
+            }
+        }
+        
+
+
 document.getElementById("button-add-account").addEventListener("click", () => togglePopup(true));
 document.getElementById("registerPopupCancelButton")?.addEventListener("click", () => togglePopup(false));
+
+
 
 document.getElementById('registerPopupSubmmitButton').addEventListener('click', async (event) => {
 
@@ -37,10 +165,10 @@ document.getElementById('registerPopupSubmmitButton').addEventListener('click', 
         alert("As senhas são diferentes, tente novamente!")
     }
     else {
-        
+
         const accessToken = localStorage.getItem("accessToken");
         const user = JSON.parse(localStorage.getItem("user"))
-        
+
         const addAccountLoadingCard = document.getElementById("addAccountLoadingCard");
         addAccountLoadingCard.classList.remove("hidden");
 
@@ -63,10 +191,10 @@ document.getElementById('registerPopupSubmmitButton').addEventListener('click', 
             const data = await response.json();
             console.log("ERRO ADDACCOUNT: ", data, typeof data.error);
 
-            if(data.error.error.includes("We can send you an email to help you get back into your account.")) {
+            if (data.error.error.includes("We can send you an email to help you get back into your account.")) {
 
                 if (data.error) {
-    
+
                     const errors = [];
                     errors.push(data.error);
                 }
@@ -166,7 +294,7 @@ async function loadSessions() {
     const activeList = document.getElementById("active-list");
     const errorList = document.getElementById("error-list");
 
-    
+
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user)
     const userId = user._id;
@@ -191,7 +319,7 @@ async function loadSessions() {
         data.sessions.forEach(session => {
             const card = createSessionCard(session.username, true);
             activeList.appendChild(card);
-        }); 
+        });
 
         localStorage.setItem("ErrorsNull", "Is");
 
@@ -390,7 +518,7 @@ async function displayNoneErrorSessionsCard(message = "none") {
 
     console.log(message);
 
-    if(message.includes("Houve uma falha ao realizar o Login do usuário")) {
+    if (message.includes("Houve uma falha ao realizar o Login do usuário")) {
 
         const cardHtml = `
 
@@ -478,7 +606,7 @@ function openTab(tabName) {
         if (errorsIsNull == "Null" && tabName == "error-sessions") {
 
             displayNoneErrorSessionsCard();
-            
+
         }
     }
 }
