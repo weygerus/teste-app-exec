@@ -840,13 +840,12 @@ exports.uploadUsersToViewAndLikeStoriesService = async (req, res) => {
             }
 
             const storiesFeed = session.feed.reelsMedia({ userIds: [userInfo.pk] });
-            await sleep(randomDelay(1000, 3000));
+            await sleep(randomDelay(1000, 2000));
 
             const stories = await storiesFeed.items();
-            await sleep(randomDelay(2000, 4000));
+            await sleep(randomDelay(1000, 2000));
 
             console.log(`Stories encontrados para ${profile}:`, stories.length);
-            console.log(`Estrutura dos stories recebidos:`, JSON.stringify(stories, null, 2));
 
             if (!stories.length) {
 
@@ -868,8 +867,6 @@ exports.uploadUsersToViewAndLikeStoriesService = async (req, res) => {
                     }]);
 
                     console.log(`Story visualizado: ${story.id} do perfil ${profile}`);
-                    await sleep(randomDelay(3000, 6000));
-
                 }
                 catch (error) {
 
@@ -1102,11 +1099,6 @@ exports.createStoryPostService = async (req, res) => {
     const session = await loadSessionFromDB(userId, account, ig);
 
     try {
-        const userId = user._id;
-
-        await ig.state.generateDevice(user.username);
-        const session = await loadSessionFromDB(userId, account, ig);
-
 
         if (!fs.existsSync(mediaPath)) {
             throw new Error('O arquivo especificado não existe.');
@@ -1115,23 +1107,24 @@ exports.createStoryPostService = async (req, res) => {
         const file = fs.readFileSync(mediaPath);
         const captionText = caption
 
-        // Prepara as hashtags no formato esperado
-        const formattedHashtags = hashtags.map(tag => ({
+        const formattedHashtags = Array.isArray(hashtags)
+        ? hashtags.map(tag => ({
             tag_name: tag,
-            x: 0.5, // Posição horizontal (entre 0 e 1)
-            y: 0.5, // Posição vertical (entre 0 e 1)
+            x: 0.5,
+            y: 0.5,
             width: 0.5,
             height: 0.1,
             rotation: 0.0,
-        }));
-
-        const musicSticker = music
-            ? {
-                song_name: music, // Nome da música
-                x: 0.5, // Posição horizontal
-                y: 0.5, // Posição vertical
-            }
-            : undefined;
+          }))
+        : [];
+      
+      const musicSticker = music
+        ? {
+            song_name: music,
+            x: 0.5,
+            y: 0.5,
+          }
+        : undefined;
 
         const fileType = mediaPath.split('.').pop().toLowerCase();
         const publishOptions = {
@@ -1142,9 +1135,9 @@ exports.createStoryPostService = async (req, res) => {
         let publishResult;
         if (['mp4', 'mov', 'avi'].includes(fileType)) {
 
-            const coverImagePath = path.resolve(__dirname, '../uploads/zzz.png');
+            const coverImagePath = path.resolve(__dirname, 'c://uploads/commonCover.png');
             const coverImageBuffer = fs.readFileSync(coverImagePath);
-
+            
             publishResult = await session.publish.story({
                 video: file,
                 coverImage: coverImageBuffer,

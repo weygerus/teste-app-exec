@@ -40,4 +40,6 @@ router.post('/uploadLikesToCommentsService/:userId/:account', uploadTxt, verifyT
 router.post('/uploadUsersToViewAndLikeStoriesService/:userId/:account', verifyToken, uploadUsersToViewAndLikeStoriesService);
 router.post('/uploadUsersToViewAndLikeStoriesFileService/:userId/:account', uploadTxt, verifyToken, uploadUsersToViewAndLikeStoriesFileService);
 
+
+ //https://b6e5-177-152-71-68.ngrok-free.app/api/action/createStoryPostService/67eb4b4c0129cdd17139e99e/_comprar_curtidas
 module.exports = router;

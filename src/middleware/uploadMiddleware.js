@@ -7,7 +7,7 @@ console.log("MULTERMIDIA")
 // Configuração de armazenamento do multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '../backend/uploads/');  // Diretório onde os arquivos serão armazenados
+    cb(null, 'c://uploads/');  // Diretório onde os arquivos serão armazenados
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname)  // Nome único para o arquivo
@@ -25,6 +25,9 @@ const textFileFilter = (req, file, cb) => {
     cb(new Error('Tipo de arquivo não suportado! Apenas arquivos .txt são permitidos.'));
   }
 };
+
+//"C:\Program Files\7-Zip\7z.exe" aC:\Users\gabri\Downloads\instaApp.zip C:\dev\teste-app-exec\instaExecApp-win32-x64
+
 
 // Filtro para verificar o tipo do arquivo
 const fileFilter = (req, file, cb) => {

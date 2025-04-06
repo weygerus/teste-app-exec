@@ -29,7 +29,8 @@
   },
   "devDependencies": {
     "electron": "^35.0.2",
-    "electron-builder": "^25.1.8"
+    "electron-builder": "^25.1.8",
+    "electron-reload": "^2.0.0-alpha.1"
   },
   "build": {
     "appId": "com.meuapp",
