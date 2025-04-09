@@ -1148,6 +1148,7 @@ exports.createStoryPostService = async (req, res) => {
         }
         else {
 
+             
             console.log("CAPTION: ", typeof caption, caption)
             publishResult = await session.publish.story({
                 file,
@@ -1155,6 +1156,8 @@ exports.createStoryPostService = async (req, res) => {
                 ...publishOptions,
             });
         }
+
+        //7z x arquivo.zip -oC:\Users\Oem\Downloads
 
         fs.unlinkSync(mediaPath);
 
