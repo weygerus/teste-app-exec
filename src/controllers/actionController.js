@@ -1037,7 +1037,7 @@ exports.createFeedPostService = async (req, res) => {
         let publishResult;
         if (['mp4', 'mov', 'avi'].includes(fileType)) {
 
-            const coverImagePath = path.resolve(__dirname, '../uploads/zzz.png');
+            const coverImagePath = path.resolve(__dirname, '../uploads/commonCover.png');
             const coverImageBuffer = fs.readFileSync(coverImagePath);
 
             publishResult = await session.publish.video({
@@ -1130,7 +1130,7 @@ exports.createStoryPostService = async (req, res) => {
         const publishOptions = {
             hashtags: formattedHashtags,
             music_sticker: musicSticker,
-        };
+        }; 
 
         let publishResult;
         if (['mp4', 'mov', 'avi'].includes(fileType)) {
@@ -1143,6 +1143,8 @@ exports.createStoryPostService = async (req, res) => {
                 coverImage: coverImageBuffer,
                 ...publishOptions,
             });
+
+            if (fs.existsSync(coverImagePath)) fs.unlinkSync(coverImagePath);
         }
         else {
 
